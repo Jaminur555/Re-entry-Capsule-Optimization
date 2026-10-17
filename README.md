@@ -14,9 +14,9 @@ against Dirkx & Mooij, *Aerothermodynamic Design and Assessment of Space Vehicle
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![pymoo](https://img.shields.io/badge/pymoo-NSGA--II-FF6F00?style=flat-square)
 ![Validation](https://img.shields.io/badge/validation-20%2B%20checks%20passing-2EA44F?style=flat-square)
-![Status](https://img.shields.io/badge/status-Phase%202%20·%20robust%20optimization-DFB317?style=flat-square)
+![Status](https://img.shields.io/badge/status-manuscript%20drafted-2EA44F?style=flat-square)
 
-*From a defended MSc thesis → journal manuscript in preparation.*
+*From a defended BSc thesis → journal manuscript (Acta Astronautica) — full prose draft done.*
 
 </div>
 
@@ -33,7 +33,9 @@ against Dirkx & Mooij, *Aerothermodynamic Design and Assessment of Space Vehicle
   uncertain inputs, gated with out-of-fold surrogate accuracy targets *before* any
   optimization claims.
 - **Robust by design** — deterministic vs robust optimization under entry-state and
-  aero-model-form uncertainty (work in progress).
+  aero-model-form uncertainty, compared on one validated physics core with a
+  common-random-number moment engine and verified against the true simulator
+  (1,500 Monte-Carlo runs).
 
 ## 📍 Where it stands
 
@@ -42,7 +44,8 @@ against Dirkx & Mooij, *Aerothermodynamic Design and Assessment of Space Vehicle
 | **Thesis** | Apollo-class capsule shape optimization (defended Jul 2026) | ✅ |
 | **Phase 1** | D&M-faithful model upgrade + V0–V4 validation suite | ✅ closed |
 | **Phase 2** | UQ: DOE → GP mixture surrogate → **gate passed** | ✅ |
-| **Step 6** | Deterministic vs robust optimization + comparison | 🔜 in progress |
+| **Step 6** | Deterministic vs robust optimization + comparison | ✅ |
+| **Paper** | Acta Astronautica manuscript (`paper/manuscript/`) | 📝 complete draft — all review points answered (39 pp, 26 refs, App. A+B); supervisor pass pending |
 
 ## 📦 Layout
 
@@ -61,6 +64,11 @@ uq/                 Phase 2 — DOE, surrogate build + accuracy gate
   data/               2800-run DOE + trajectory descriptors
   artifacts/          trained surrogates (gitignored, regenerable)
   diagnostics/        surrogate-development forensics
+paper/              journal manuscript + paper-facing assets
+  manuscript/         Acta Astronautica LaTeX (elsarticle, sections/01–08)
+  figures/ tables/     publication figures + data tables (copies; uq/ is source)
+  supplementary/      figS1 convergence evidence + interactive front
+  thesis_assets/      figures extracted from the thesis docx (to restyle)
 main.py             deterministic NSGA-II optimization entry point
 data/cache/         Taylor–Maccoll cone-Cp lookup table
 results/            figures

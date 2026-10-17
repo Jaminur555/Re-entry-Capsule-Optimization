@@ -1,0 +1,50 @@
+%======================================================================
+% 8. CONCLUSIONS
+%======================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+
+Deterministic and robust formulations of a three-objective capsule shape
+optimization --- maximize volumetric efficiency, minimize integrated heat
+load, maximize range --- were solved on one validated aerothermal model and
+one set of Gaussian-process surrogates, with an uncertainty model combining
+entry-state dispersion ($\gamma_0$, $V_0$) and aerodynamic model-form scales
+($k_{CD}$, $k_{CL}$) sized from wind-tunnel validation residuals. A
+common-random-number moment engine made the two fronts directly comparable,
+and 1{,}500 simulator runs verified the findings against the true model.
+
+At matched expected performance, robust designs reduced heat-load
+dispersion in 98.1\% of 5{,}371 matched design pairs, with a median cut
+of 27.5\% at pair level and 35.0\% against the robust front's
+$\sigma$-envelope at matched performance (4.3\% under the strictest
+prespecified matching rule); these statistics are insensitive to
+$\pm40\%$ perturbation of the aerodynamic uncertainty band, to
+correlation between the aerodynamic scale factors, and to the matching
+window --- including removal of its range leg, which carries the
+surrogate's measured range bias --- and remain
+qualitatively unchanged across a factor-three range of flight-path-angle
+dispersion. The deterministic front, feasible at every point at
+nominal conditions, concealed shoulder-heating exceedance probabilities up
+to 10.0\%, confirmed at 9.7\% by Monte-Carlo simulation at its most
+fragile design --- rising to 17.1\% under an alternate guidance
+realization --- and roughly one in four of its designs exceeded a 1\%
+exceedance probability on stagnation or shoulder heating. A
+geometry-insensitive dispersion floor of
+\SI{16}{\mega\joule\per\square\metre} (CV $\approx$ 20\%) bounded both
+fronts identically within the studied design space and uncertainty model:
+under the assumed flight-path-angle dispersion, shape is not an active
+lever on heat-load spread, and reducing it further requires corridor,
+guidance, or modelling levers outside the design space. Two methodological results complete the
+picture. Optimizing a probabilistic surrogate through point predictions
+drove the deterministic front into a slow-family extrapolation region
+where predicted range exceeded the antipodal distance (a factor of 3.5 at
+the knee), while the moment-based formulation self-regulated; and the
+mixture surrogate's expected range is biased $+9$ to $+28\%$ by
+lognormal-mean inflation, disclosed and bounded here by simulation.
+
+The comparison protocol --- same physics, common random numbers,
+matched-pair statistics, post-hoc fragility audit, simulator-level
+verification --- is reusable wherever deterministic practice is to be
+audited against robust alternatives, and the verified exceedance
+statistics provide calibration points for the reliability-based
+formulation that follows as future work.

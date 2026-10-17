@@ -1,0 +1,138 @@
+%======================================================================
+% APPENDIX A. REFERENCE-CASE FORENSICS AND MODEL DEVIATIONS
+%    (source: capsule_opt/validation/DEVIATIONS.md + RESULTS.md)
+%======================================================================
+\appendix
+\section{Reference-case forensics and model deviations}
+\label{app:validation}
+
+This appendix documents, in audit form, the end-to-end comparison against
+the Apollo reference case of \cite{dirkx2017entry} summarized in
+Section~\ref{sec:validation}: the identified internal inconsistencies of
+the reference data, the sensitivity of the comparison to the guidance-law
+realization, and the deviations between the present implementation and the
+reference method. The purpose is to attribute the residual end-to-end
+discrepancies rather than to explain them away.
+
+\subsection{Internal inconsistency of the reference load-factor panel}
+\label{app:identity}
+
+For a point-mass entry, the peak load factor and the stagnation heat-rate
+curve of one simulation are algebraically coupled, independent of the
+trajectory or guidance model:
+\begin{equation}
+n \;=\; \frac{\dot{q}^{\,2}\,R_{\mathrm{eff}}\,C_D\,A}
+            {2\,m\,g\,k^2\,V^4},
+\label{eq:identity}
+\end{equation}
+with $V$ fixed by Mach. This identity holds to $\sim$2\% on our own
+trajectories. Applied to the digitized curves of the reference Fig.~7.17(c),
+it is violated systematically (Table~\ref{tab:identity}): the ratio between
+the printed $n$ panel and the $n$ implied by the printed $\dot{q}$ curve
+swings between 0.17 and 0.65, and no single parameter (mass,
+$R_{\mathrm{eff}}$, $C_D$, heating constant) reconciles them --- the
+rescaling required varies by a factor of two across the Mach range, the
+signature of curves from different runs plotted together. The reference's
+own $\dot{q}$ curve implies $n_{\max}\approx\SI{11}{g}$ where the panel
+prints \SI{4.35}{g}. In addition, the reference table's integrated heat
+load (\SI{53.06}{\mega\joule\per\square\metre}) lies below every member of
+the variant family of Table~\ref{tab:variants} even though the digitized
+$\dot{q}$ curve runs 1.5--2.7$\times$ above ours below $M\approx13$: the
+table and the figure disagree with each other, not merely with us. The
+load-factor panel is therefore treated as qualitative only, and
+peak-load-factor is excluded as a validation target. Apollo flight data
+peak at $\sim$3~g (LEO class) to $\sim$7~g (lunar return)
+\cite{hillje1969apollo,moseley1969wind}; for the shallower reference case
+the 5--7~g class is expected, consistent with the present result
+($n_D=5.06$, $n_{\mathrm{tot}}=5.33$~g).
+
+\begin{table}[htbp]
+\centering
+\caption{Identity check on the digitized reference Fig.~7.17(c): the
+  printed load-factor panel versus the load factor implied by the printed
+  heat-rate curve through Eq.~\eqref{eq:identity}. A ratio near unity is
+  required for self-consistency.}
+\label{tab:identity}
+\begin{tabular}{rcccc}
+\toprule
+$M$ & $n$ panel [g] & $\dot{q}$ panel [\si{\kilo\watt\per\square\metre}] &
+$n$ implied [g] & ratio \\
+\midrule
+6.5   & 3.16 & 131 & 19.1 & 0.17 \\
+9.4   & 4.05 & 233 & 13.2 & 0.31 \\
+12.3  & 4.35 & 371 & 11.0 & 0.40 \\
+15.6  & 4.00 & 526 & 8.2  & 0.49 \\
+17.5  & 3.50 & 588 & 6.6  & 0.53 \\
+19.6  & 2.78 & 616 & 4.9  & 0.57 \\
+22.6  & 1.45 & 527 & 2.2  & 0.65 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Guidance-law sensitivity of the end-to-end comparison}
+\label{app:variants}
+
+The reference specifies a no-skip bank law (their Eq.~2.41) but leaves its
+realization --- activation gate, saturation, rate limits --- partly open.
+Table~\ref{tab:variants} spans a family of realizations. Range and peak
+heat rate move in opposite directions across the family: the baseline
+reproduces peak heat rate to 0.7\%, the Eq.~2.40-as-printed variant
+reproduces track length to $-1.1\%$, and no member reproduces the
+reference table and the figure panels simultaneously. The family floor for
+integrated heat load is $+16\%$ relative to the table value. The
+discrepancies quoted in Section~\ref{sec:validation} ($+32\%$ heat load,
+$+16\%$ track length for the baseline) are thus bounded and attributed,
+not unexplained.
+
+\begin{table}[htbp]
+\centering
+\caption{Guidance-variant family on the reference Apollo case (reference
+  table values: $Q_s=\SI{53.06}{\mega\joule\per\square\metre}$,
+  $sg=\SI{1430.2}{\kilo\metre}$,
+  $\dot{q}_{\max}=\SI{0.616}{\mega\watt\per\square\metre}$).}
+\label{tab:variants}
+\begin{tabular}{lccccc}
+\toprule
+variant & $Q_s$ & $sg$ & $\dot{q}_{\max}$ & $n_{\mathrm{tot}}$ &
+bank onset \\
+\midrule
+baseline (Eq.~2.41, sin-$\chi$)      & 70.1 ($+32\%$) & 1657 ($+16\%$) &
+  \textbf{0.621 ($+0.7\%$)} & 5.33 & $M\,24.4$ \\
+gate $\varepsilon{=}0.15$, cap $82^\circ$ & 65.7 ($+24\%$) & 1519 ($+6\%$) &
+  0.663 & 6.91 & $M\,25.8$ \\
+gate $\varepsilon{=}0.30$, cap $82^\circ$ & 64.2 ($+21\%$) & 1477 ($+3\%$) &
+  0.683 & 7.52 & $M\,26.6$ \\
+Eq.~2.40 as printed (sin-$\gamma$), cap $82^\circ$ & 61.6 ($+16\%$) &
+  \textbf{1414 ($-1\%$)} & 0.722 ($+17\%$) & 8.41 & entry \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Deviations from the reference implementation}
+\label{app:deviations}
+
+The implementation deviations, each quantified on the reference case, are:
+(i) the bank command is rate-limited at \SI{5}{\degree\per\s} through a
+first-order lag, removing the on/off chatter of the idealized command
+(no-skip law form otherwise identical, including the sin-$\chi$ Coriolis
+term; the book's Eq.~2.40, which prints sin-$\gamma$, is treated as a
+typographical error since sin-$\chi$ is required by the equations of
+motion); (ii) Prandtl--Meyer expansion is used on all lee surfaces, where
+the reference switches laws by surface type ($\le0.05$ on $C_D$ at
+$\alpha=0$); (iii) the tangent-cone solution saturates to the Newtonian
+level beyond shock detachment, where the reference correlation continues
+to rise (core agreement $\le0.061$~$C_p$, worst at $M=3$ where the
+detachment angle is smallest); (iv) base pressure is not modelled; (v) the
+Mach grid extends to 30 rather than 25 ($\Delta C_p\approx7\times10^{-4}$
+at the vacuum limit); (vi) the moment reference and sign conventions are
+mapped exactly (magnitudes $\le0.005$ after conversion, identical trim
+angle and slope); and (vii) the load-factor metric is drag-based with the
+total-force value reported alongside
+($n_{\mathrm{tot}}=n_D\sqrt{1+(L/D)^2}$, a 4--5\% correction here).
+
+Reference data were digitized with per-subpanel calibration; tracing
+artifacts (a mis-traced return branch, stray endpoints) were removed with
+a documented filter and all verdicts re-verified stable against the
+cleaned data. The case identity was confirmed against the book text
+(initial conditions $V_0=7.83$~km/s, $\gamma_0=-4^\circ$,
+$m=4532$~kg), ruling out a mission mismatch.

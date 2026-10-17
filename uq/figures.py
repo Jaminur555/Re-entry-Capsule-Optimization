@@ -1,7 +1,7 @@
-"""Paper figures (Step 6): deterministic vs robust fronts + probe validation.
+﻿"""Paper figures (Step 6): deterministic vs robust fronts + probe validation.
 
 Publication-standard static figures (Acta Astronautica): seaborn-styled
-matplotlib, boxed axes on solid white, vector PDF + 300 dpi PNG -> uq/figures.
+matplotlib, boxed axes on solid white, vector PDF + 300 dpi PNG -> paper/figures.
 All markers are solid circles (identity by color only: det blue vs robust
 vermillion, Okabe-Ito CVD-safe); no on-figure text beyond axis labels --
 reference lines and their meaning go in the paper captions. A plotly HTML
@@ -20,7 +20,7 @@ import seaborn as sns
 from matplotlib.lines import Line2D
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIG = os.path.join(HERE, 'figures')
+FIG = os.path.join(os.path.dirname(HERE), 'paper', 'figures')
 os.makedirs(FIG, exist_ok=True)
 
 DET, ROB, ACC = '#0072B2', '#D55E00', '#009E73'   # Okabe-Ito pair + accent
@@ -97,22 +97,33 @@ def fig_front(d, r):
 
 
 def fig_matched(d, r):
+    """ECDFs of the per-design sigma cut under two partner-selection rules:
+    the prespecified nearest-performance match and the lowest-sigma (best)
+    eligible partner = the robust front's sigma-envelope at matched
+    performance."""
     dd = d[['E_Qs', 'E_sg', 'sd_Qs_infl']].reset_index(names='idx_d')
     rr = r[['E_Qs', 'E_sg', 'sd_Qs_infl']].assign(k=1)
     m = dd.assign(k=1).merge(rr, on='k', suffixes=('_d', '_r'))
     ok = m[(m.E_Qs_r <= m.E_Qs_d * 1.02) & (m.E_sg_r >= m.E_sg_d * 0.98)]
-    best = ok.groupby('idx_d')['sd_Qs_infl_r'].min()
-    cut = 1 - best.to_numpy() / d.sd_Qs_infl.iloc[best.index].to_numpy()
+    ok = ok.assign(cut=1 - ok.sd_Qs_infl_r / ok.sd_Qs_infl_d,
+                   dist=np.sqrt((ok.E_Qs_r / ok.E_Qs_d - 1) ** 2 +
+                                (ok.E_sg_r / ok.E_sg_d - 1) ** 2))
+    best = ok.groupby('idx_d')['cut'].max()
+    near = ok.loc[ok.groupby('idx_d')['dist'].idxmin(), 'cut']
 
     fig, ax = plt.subplots(figsize=(3.5, 2.5))
     box(ax)
-    ax.plot(np.sort(cut), np.arange(1, len(cut) + 1) / len(cut), c=INK)
+    ax.plot(100 * np.sort(near), np.arange(1, len(near) + 1) / len(near),
+            c=ACC, ls='--', label='nearest match (prespecified)')
+    ax.plot(100 * np.sort(best), np.arange(1, len(best) + 1) / len(best),
+            c=INK, label=r'best match ($\sigma$-envelope)')
     ax.axvline(0.0, c=MUTED, ls=':', lw=0.9, zorder=0)
-    ax.axvline(float(np.median(cut)), c=ROB, ls='--', lw=0.9, zorder=0)
-    ax.set_xlabel(r'$\sigma_{Q_s}$ reduction at matched $E[Q_s],\,E[s_g]$')
+    ax.set_xlabel(r'$\sigma_{Q_s}$ reduction at matched '
+                  r'$E[Q_s],\,E[s_g]$  [%]')
     ax.set_ylabel('ECDF (deterministic designs)')
-    ax.set_xlim(-1.0, 1.0)
-    save(fig, 'fig2_matched_cut')
+    ax.set_xlim(-100.0, 100.0)
+    ax.legend(loc='lower right')
+    save(fig, 'fig2_matched_sigma_cut')
 
 
 def fig_violation(d, r):
@@ -158,14 +169,17 @@ def fig_projections(d, r):
 def fig_design_space(d, r, scan):
     fig, ax = plt.subplots(figsize=(3.5, 2.9))
     box(ax)
-    sc = ax.scatter(scan.x3, scan.x1, c=scan.sd_Qs_infl / 1e6, cmap='coolwarm',
+    sc = ax.scatter(5 + 55 * scan.x3, 3 + 4 * scan.x1,
+                    c=scan.sd_Qs_infl / 1e6, cmap='coolwarm',
                     s=10, alpha=0.9, linewidths=0)
-    ax.scatter(d.r_theta, d.rn, s=17, c=DET, marker='o', alpha=0.95,
-               linewidths=0.6, edgecolors='black', label='deterministic front')
-    ax.scatter(r.r_theta, r.rn, s=17, c=ROB, marker='o', alpha=0.95,
-               linewidths=0.6, edgecolors='black', label='robust front')
-    ax.set_xlabel(r'$r_\theta$ (normalized)')
-    ax.set_ylabel(r'$r_n$ (normalized)')
+    ax.scatter(5 + 55 * d.r_theta, 3 + 4 * d.rn, s=17, c=DET, marker='o',
+               alpha=0.95, linewidths=0.6, edgecolors='black',
+               label='deterministic front')
+    ax.scatter(5 + 55 * r.r_theta, 3 + 4 * r.rn, s=17, c=ROB, marker='o',
+               alpha=0.95, linewidths=0.6, edgecolors='black',
+               label='robust front')
+    ax.set_xlabel(r'$\theta_c$  [deg]')
+    ax.set_ylabel(r'$R_n$  [m]')
     ax.legend(handles=[Line2D([], [], ls='', marker='o', ms=4.5, mfc=DET,
                               mec='black', label='deterministic front'),
                        Line2D([], [], ls='', marker='o', ms=4.5, mfc=ROB,
@@ -174,7 +188,7 @@ def fig_design_space(d, r, scan):
                borderaxespad=0.0)
     cb = fig.colorbar(sc, ax=ax, pad=0.02)
     cb.set_label(r'$\sigma_{Q_s}$  [MJ m$^{-2}$]', fontsize=7.5)
-    save(fig, 'fig5_design_space')
+    save(fig, 'fig5_design_space_sigma_map')
 
 
 def fig_probe(probe):
@@ -200,7 +214,7 @@ def fig_probe(probe):
               handletextpad=0.3, columnspacing=1.0, borderaxespad=0.0)
     ax.grid(axis='x', visible=False)
     fig.tight_layout()
-    save(fig, 'fig6_probe_sigma')
+    save(fig, 'fig6_probe_true_sigma')
 
 
 def fig_front_plotly(d, r):

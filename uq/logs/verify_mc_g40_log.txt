@@ -1,0 +1,482 @@
+GUIDANCE-MC: bank law patched to Eq-2.40-as-printed (sin-gamma, cap 82 deg); staging to verify_mc_g40.csv
+VERIFY-MC: 5 designs x 300 samples, 1500 to run (~15-50 s each; 5x300 ~ 10-12 h), t_max=14400 s, z-seed 2026
+  design 0 det_knee: knee_designs.csv mode=det (front row 124)
+  design 1 rob_knee: knee_designs.csv mode=robust (front row 51)
+  design 2 rob_matched: knee_designs.csv mode=robust_m (front row 143)
+  design 3 det_fragile: det front row 2, max audit Pexc(q_shldr) = 0.100
+  design 4 rob_floor: robust front row 3, min sd_Qs_infl = 16.4 MJ/m2
+  10/1500 done  6 min elapsed, ETA 14.4 h
+  20/1500 done  12 min elapsed, ETA 14.3 h
+  30/1500 done  18 min elapsed, ETA 14.8 h
+  40/1500 done  23 min elapsed, ETA 14.1 h
+  50/1500 done  28 min elapsed, ETA 13.5 h
+  60/1500 done  35 min elapsed, ETA 13.9 h
+  70/1500 done  41 min elapsed, ETA 14.1 h
+  80/1500 done  47 min elapsed, ETA 14.0 h
+  90/1500 done  53 min elapsed, ETA 13.7 h
+  100/1500 done  57 min elapsed, ETA 13.3 h
+  110/1500 done  64 min elapsed, ETA 13.5 h
+  120/1500 done  70 min elapsed, ETA 13.5 h
+  130/1500 done  76 min elapsed, ETA 13.4 h
+  140/1500 done  83 min elapsed, ETA 13.5 h
+  150/1500 done  89 min elapsed, ETA 13.3 h
+  160/1500 done  95 min elapsed, ETA 13.2 h
+  170/1500 done  102 min elapsed, ETA 13.3 h
+  180/1500 done  108 min elapsed, ETA 13.2 h
+  190/1500 done  114 min elapsed, ETA 13.1 h
+  200/1500 done  121 min elapsed, ETA 13.1 h
+  210/1500 done  126 min elapsed, ETA 12.9 h
+  220/1500 done  133 min elapsed, ETA 12.9 h
+  230/1500 done  140 min elapsed, ETA 12.9 h
+  240/1500 done  145 min elapsed, ETA 12.6 h
+  250/1500 done  151 min elapsed, ETA 12.6 h
+  260/1500 done  160 min elapsed, ETA 12.7 h
+  270/1500 done  165 min elapsed, ETA 12.5 h
+  280/1500 done  169 min elapsed, ETA 12.3 h
+  290/1500 done  174 min elapsed, ETA 12.1 h
+  300/1500 done  180 min elapsed, ETA 12.0 h
+  310/1500 done  186 min elapsed, ETA 11.9 h
+  320/1500 done  194 min elapsed, ETA 11.9 h
+  330/1500 done  201 min elapsed, ETA 11.9 h
+  340/1500 done  207 min elapsed, ETA 11.8 h
+  350/1500 done  212 min elapsed, ETA 11.6 h
+  360/1500 done  220 min elapsed, ETA 11.6 h
+  370/1500 done  228 min elapsed, ETA 11.6 h
+  380/1500 done  236 min elapsed, ETA 11.6 h
+  390/1500 done  242 min elapsed, ETA 11.5 h
+  400/1500 done  247 min elapsed, ETA 11.3 h
+  410/1500 done  255 min elapsed, ETA 11.3 h
+  420/1500 done  262 min elapsed, ETA 11.2 h
+  430/1500 done  269 min elapsed, ETA 11.2 h
+  440/1500 done  278 min elapsed, ETA 11.2 h
+  450/1500 done  284 min elapsed, ETA 11.0 h
+  460/1500 done  290 min elapsed, ETA 10.9 h
+  470/1500 done  299 min elapsed, ETA 10.9 h
+  480/1500 done  306 min elapsed, ETA 10.8 h
+  490/1500 done  312 min elapsed, ETA 10.7 h
+  500/1500 done  318 min elapsed, ETA 10.6 h
+  510/1500 done  324 min elapsed, ETA 10.5 h
+  520/1500 done  332 min elapsed, ETA 10.4 h
+  530/1500 done  340 min elapsed, ETA 10.4 h
+  540/1500 done  343 min elapsed, ETA 10.2 h
+  550/1500 done  348 min elapsed, ETA 10.0 h
+  560/1500 done  354 min elapsed, ETA 9.9 h
+  570/1500 done  357 min elapsed, ETA 9.7 h
+  580/1500 done  359 min elapsed, ETA 9.5 h
+  590/1500 done  363 min elapsed, ETA 9.3 h
+  600/1500 done  366 min elapsed, ETA 9.2 h
+  610/1500 done  370 min elapsed, ETA 9.0 h
+  620/1500 done  373 min elapsed, ETA 8.8 h
+  630/1500 done  377 min elapsed, ETA 8.7 h
+  640/1500 done  380 min elapsed, ETA 8.5 h
+  650/1500 done  383 min elapsed, ETA 8.3 h
+  660/1500 done  386 min elapsed, ETA 8.2 h
+  670/1500 done  390 min elapsed, ETA 8.1 h
+  680/1500 done  394 min elapsed, ETA 7.9 h
+  690/1500 done  397 min elapsed, ETA 7.8 h
+  700/1500 done  399 min elapsed, ETA 7.6 h
+  710/1500 done  404 min elapsed, ETA 7.5 h
+  720/1500 done  407 min elapsed, ETA 7.3 h
+  730/1500 done  411 min elapsed, ETA 7.2 h
+  740/1500 done  415 min elapsed, ETA 7.1 h
+  750/1500 done  418 min elapsed, ETA 7.0 h
+  760/1500 done  421 min elapsed, ETA 6.8 h
+  770/1500 done  425 min elapsed, ETA 6.7 h
+  780/1500 done  428 min elapsed, ETA 6.6 h
+  790/1500 done  432 min elapsed, ETA 6.5 h
+  800/1500 done  436 min elapsed, ETA 6.4 h
+  810/1500 done  438 min elapsed, ETA 6.2 h
+  820/1500 done  442 min elapsed, ETA 6.1 h
+  830/1500 done  447 min elapsed, ETA 6.0 h
+  840/1500 done  449 min elapsed, ETA 5.9 h
+  850/1500 done  453 min elapsed, ETA 5.8 h
+  860/1500 done  458 min elapsed, ETA 5.7 h
+  870/1500 done  461 min elapsed, ETA 5.6 h
+  880/1500 done  463 min elapsed, ETA 5.4 h
+  890/1500 done  466 min elapsed, ETA 5.3 h
+  900/1500 done  469 min elapsed, ETA 5.2 h
+  910/1500 done  473 min elapsed, ETA 5.1 h
+  920/1500 done  477 min elapsed, ETA 5.0 h
+  930/1500 done  482 min elapsed, ETA 4.9 h
+  940/1500 done  485 min elapsed, ETA 4.8 h
+  950/1500 done  488 min elapsed, ETA 4.7 h
+  960/1500 done  492 min elapsed, ETA 4.6 h
+  970/1500 done  497 min elapsed, ETA 4.5 h
+  980/1500 done  501 min elapsed, ETA 4.4 h
+  990/1500 done  504 min elapsed, ETA 4.3 h
+  1000/1500 done  507 min elapsed, ETA 4.2 h
+  1010/1500 done  513 min elapsed, ETA 4.1 h
+  1020/1500 done  518 min elapsed, ETA 4.1 h
+  1030/1500 done  522 min elapsed, ETA 4.0 h
+  1040/1500 done  529 min elapsed, ETA 3.9 h
+  1050/1500 done  533 min elapsed, ETA 3.8 h
+  1060/1500 done  537 min elapsed, ETA 3.7 h
+  1070/1500 done  543 min elapsed, ETA 3.6 h
+  1080/1500 done  546 min elapsed, ETA 3.5 h
+  1090/1500 done  551 min elapsed, ETA 3.5 h
+  1100/1500 done  556 min elapsed, ETA 3.4 h
+  1110/1500 done  559 min elapsed, ETA 3.3 h
+  1120/1500 done  564 min elapsed, ETA 3.2 h
+  1130/1500 done  570 min elapsed, ETA 3.1 h
+  1140/1500 done  572 min elapsed, ETA 3.0 h
+  1150/1500 done  577 min elapsed, ETA 2.9 h
+  1160/1500 done  584 min elapsed, ETA 2.9 h
+  1170/1500 done  587 min elapsed, ETA 2.8 h
+  1180/1500 done  590 min elapsed, ETA 2.7 h
+  1190/1500 done  594 min elapsed, ETA 2.6 h
+  1200/1500 done  598 min elapsed, ETA 2.5 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1210/1500 done  598 min elapsed, ETA 2.4 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1220/1500 done  598 min elapsed, ETA 2.3 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1230/1500 done  598 min elapsed, ETA 2.2 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1240/1500 done  598 min elapsed, ETA 2.1 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1250/1500 done  598 min elapsed, ETA 2.0 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1260/1500 done  598 min elapsed, ETA 1.9 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1270/1500 done  598 min elapsed, ETA 1.8 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1280/1500 done  598 min elapsed, ETA 1.7 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1290/1500 done  598 min elapsed, ETA 1.6 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1300/1500 done  598 min elapsed, ETA 1.5 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1310/1500 done  598 min elapsed, ETA 1.4 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1320/1500 done  598 min elapsed, ETA 1.4 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1330/1500 done  598 min elapsed, ETA 1.3 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1340/1500 done  598 min elapsed, ETA 1.2 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1350/1500 done  598 min elapsed, ETA 1.1 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1360/1500 done  598 min elapsed, ETA 1.0 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1370/1500 done  598 min elapsed, ETA 0.9 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1380/1500 done  598 min elapsed, ETA 0.9 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1390/1500 done  598 min elapsed, ETA 0.8 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1400/1500 done  598 min elapsed, ETA 0.7 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1410/1500 done  598 min elapsed, ETA 0.6 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1420/1500 done  598 min elapsed, ETA 0.6 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1430/1500 done  598 min elapsed, ETA 0.5 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1440/1500 done  598 min elapsed, ETA 0.4 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1450/1500 done  598 min elapsed, ETA 0.3 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1460/1500 done  598 min elapsed, ETA 0.3 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1470/1500 done  598 min elapsed, ETA 0.2 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1480/1500 done  598 min elapsed, ETA 0.1 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1490/1500 done  598 min elapsed, ETA 0.1 h
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  point FAILED: ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.
+  1500/1500 done  598 min elapsed, ETA 0.0 h
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "F:\My documents\Thesis Extension\capsule_opt\uq\verify_mc_guidance.py", line 102, in <module>
+    main()
+    ~~~~^^
+  File "F:\My documents\Thesis Extension\capsule_opt\uq\verify_mc_guidance.py", line 95, in main
+    V.main()          # staged MC under the patched law
+    ~~~~~~^^
+  File "F:\My documents\Thesis Extension\capsule_opt\uq\verify_mc.py", line 203, in main
+    summarize(k)
+    ~~~~~~~~~^^^
+  File "F:\My documents\Thesis Extension\capsule_opt\uq\verify_mc.py", line 106, in summarize
+    m = eng.moments(np.array([list(d[1]) for d in designs]))
+  File "F:\My documents\Thesis Extension\capsule_opt\uq\engine.py", line 186, in moments
+    out = {'eta_V': np.array([volumetric_efficiency(*x) for x in Xd])}
+                              ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "F:\My documents\Thesis Extension\capsule_opt\capsule_opt\optimization\metrics.py", line 31, in volumetric_efficiency
+    props = get_capsule_properties(rn, rs, r_theta, cg_params=cg_params)
+  File "F:\My documents\Thesis Extension\capsule_opt\capsule_opt\properties.py", line 50, in get_capsule_properties
+    X, Y, breaks = capsule_profile(rn, rs, r_theta)
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "F:\My documents\Thesis Extension\capsule_opt\capsule_opt\geometry\geometry.py", line 69, in capsule_profile
+    raise ValueError(f"Infeasible Geometry: Rear sphere radius R_rs={R_rs:.2f} is non-positive.")
+ValueError: Infeasible Geometry: Rear sphere radius R_rs=-0.72 is non-positive.

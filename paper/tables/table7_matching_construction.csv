@@ -1,0 +1,41 @@
+E_sg window,statistic,value
+2%,matched pairs,5371.0
+2%,pair frac favour robust,0.9808
+2%,pair median cut,0.2752
+2%,det designs matched,196.0
+2%,best-match frac beaten,0.9949
+2%,best-match median cut,0.3498
+2%,nearest-match frac beaten,0.8418
+2%,nearest-match median cut,0.0434
+5%,matched pairs,6723.0
+5%,pair frac favour robust,0.9798
+5%,pair median cut,0.2841
+5%,det designs matched,200.0
+5%,best-match frac beaten,0.995
+5%,best-match median cut,0.374
+5%,nearest-match frac beaten,0.82
+5%,nearest-match median cut,0.0242
+10%,matched pairs,9191.0
+10%,pair frac favour robust,0.9756
+10%,pair median cut,0.2888
+10%,det designs matched,200.0
+10%,best-match frac beaten,0.995
+10%,best-match median cut,0.46
+10%,nearest-match frac beaten,0.795
+10%,nearest-match median cut,0.0175
+15%,matched pairs,11254.0
+15%,pair frac favour robust,0.9733
+15%,pair median cut,0.2967
+15%,det designs matched,200.0
+15%,best-match frac beaten,0.995
+15%,best-match median cut,0.46
+15%,nearest-match frac beaten,0.795
+15%,nearest-match median cut,0.0172
+100%,matched pairs,13835.0
+100%,pair frac favour robust,0.9725
+100%,pair median cut,0.3225
+100%,det designs matched,200.0
+100%,best-match frac beaten,0.995
+100%,best-match median cut,0.46
+100%,nearest-match frac beaten,0.795
+100%,nearest-match median cut,0.0172

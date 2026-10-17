@@ -1,0 +1,92 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Acta Astronautica (Elsevier) -- elsarticle class. Sectionized layout:
+%% sections/01..08_*.tex combined here; References LAST. Compile:
+%%   pdflatex -interaction=nonstopmode main && bibtex main &&
+%%   pdflatex -interaction=nonstopmode main &&
+%%   pdflatex -interaction=nonstopmode main
+
+\graphicspath{{../figures/}{../supplementary/}}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+
+\journal{Acta Astronautica}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Robust shape optimization of a ballistic entry capsule under
+entry-condition and aerodynamic model-form uncertainty}
+
+\author[a]{Md Jaminur Rahman Khalid\corref{cor1}}
+\ead{mrjkhalid5@gmail.com}
+\cortext[cor1]{Corresponding author.}
+\author[a]{Mahbubul Alam}
+\affiliation[a]{organization={Department of Mechanical Engineering,
+                Chittagong University of Engineering and Technology},
+                city={Chattogram},
+                postcode={4349},
+                country={Bangladesh}}
+
+\begin{abstract}
+Shape optimization of entry capsules is conventionally deterministic: one
+nominal entry state, one aerodynamic model. We test this practice by
+comparing deterministic and robust formulations of a three-objective
+capsule problem---maximize volumetric efficiency, minimize integrated
+heat load, maximize range---on one local-inclination aerothermal model,
+component-validated against Apollo data, and common Gaussian-process
+surrogates, under entry-state dispersion combined with aerodynamic
+model-form uncertainty sized from validation residuals. At matched
+expected performance, robust designs improve on their matched
+deterministic counterparts in 98.1\% of 5{,}371 matched pairs, with a
+median heat-load-dispersion reduction of 27.5\% at pair level and 35.0\%
+against the lowest-$\sigma$ robust design available at matched
+performance --- results stable across optimizer seeds and a factor-three
+range of dispersion assumptions. The
+deterministic front conceals shoulder-heating exceedance probabilities up
+to 10\%, confirmed at 9.7\% by Monte-Carlo simulation, and its optimum
+exploits a surrogate extrapolation blind spot, overpredicting nominal
+range 3.5-fold. Within the studied design space, heat-load dispersion has
+a geometry-insensitive floor of about
+\SI{16}{\mega\joule\per\square\metre} (coefficient of variation 20\%),
+set by the flight-path-angle dispersion rather than shape.
+\end{abstract}
+
+\begin{keyword}
+capsule aerothermodynamics \sep shape optimization \sep robust design \sep
+uncertainty quantification \sep Gaussian process surrogate \sep
+multi-objective optimization
+\end{keyword}
+
+\end{frontmatter}
+
+\input{sections/01_introduction}
+\input{sections/02_vehicle_model}
+\input{sections/03_uncertainty_surrogate}
+\input{sections/04_formulation}
+\input{sections/05_results}
+\input{sections/06_verification}
+\input{sections/07_discussion}
+\input{sections/08_conclusions}
+
+% Flush all pending floats so References is followed only by appendices.
+\clearpage
+
+%======================================================================
+% REFERENCES (elsarticle-num style)
+%======================================================================
+\bibliographystyle{elsarticle-num}
+\bibliography{refs}
+
+%% Appendices AFTER the references (user preference; matches Elsevier
+%% final-article layout).
+\input{sections/09_appendix_validation}
+
+%% Appendix B: optimizer-seed repeatability (uq/seed_check.py, 3+3 runs).
+\input{sections/10_appendix_repeatability}
+
+\end{document}

@@ -1,0 +1,332 @@
+﻿VERIFY-MC-PAIRS: 5 pairs (10 designs) x 300 samples, 2996 to run (~23 s each; 5 pairs ~ 19-20 h), t_max=14400 s, z-seed 2026 (shared CRN, same z-set as verify_mc)
+  design 0 p1_det: det row 65: E_Qs quintile 1/5, cut>=pair-median, least E_sg slack
+  design 1 p1_rob: rob row 72: stress partner of det row 65 (sur ratios E_Qs -32.6%, E_sg -2.0%; sur cut +39.2%)
+  design 2 p2_det: det row 167: E_Qs quintile 2/5, cut>=pair-median, least E_sg slack
+  design 3 p2_rob: rob row 139: stress partner of det row 167 (sur ratios E_Qs -28.6%, E_sg -2.0%; sur cut +32.8%)
+  design 4 p3_det: det row 143: E_Qs quintile 3/5, cut>=pair-median, least E_sg slack
+  design 5 p3_rob: rob row 142: stress partner of det row 143 (sur ratios E_Qs -42.2%, E_sg -2.0%; sur cut +49.4%)
+  design 6 p4_det: det row 121: E_Qs quintile 4/5, cut>=pair-median, least E_sg slack
+  design 7 p4_rob: rob row 3: stress partner of det row 121 (sur ratios E_Qs -58.0%, E_sg -2.0%; sur cut +67.1%)
+  design 8 p5_det: det row 134: E_Qs quintile 5/5, cut>=pair-median, least E_sg slack
+  design 9 p5_rob: rob row 75: stress partner of det row 134 (sur ratios E_Qs -26.1%, E_sg -2.0%; sur cut +30.9%)
+  10/2996 done  3 min elapsed, ETA 17.2 h
+  20/2996 done  7 min elapsed, ETA 17.2 h
+  30/2996 done  10 min elapsed, ETA 16.0 h
+  40/2996 done  13 min elapsed, ETA 15.6 h
+  50/2996 done  16 min elapsed, ETA 15.5 h
+  60/2996 done  19 min elapsed, ETA 15.3 h
+  70/2996 done  22 min elapsed, ETA 15.6 h
+  80/2996 done  26 min elapsed, ETA 15.7 h
+  90/2996 done  29 min elapsed, ETA 15.6 h
+  100/2996 done  32 min elapsed, ETA 15.2 h
+  110/2996 done  35 min elapsed, ETA 15.3 h
+  120/2996 done  39 min elapsed, ETA 15.5 h
+  130/2996 done  42 min elapsed, ETA 15.5 h
+  140/2996 done  46 min elapsed, ETA 15.6 h
+  150/2996 done  49 min elapsed, ETA 15.4 h
+  160/2996 done  53 min elapsed, ETA 15.5 h
+  170/2996 done  57 min elapsed, ETA 15.7 h
+  180/2996 done  60 min elapsed, ETA 15.6 h
+  190/2996 done  63 min elapsed, ETA 15.6 h
+  200/2996 done  67 min elapsed, ETA 15.5 h
+  210/2996 done  70 min elapsed, ETA 15.5 h
+  220/2996 done  73 min elapsed, ETA 15.4 h
+  230/2996 done  77 min elapsed, ETA 15.4 h
+  240/2996 done  79 min elapsed, ETA 15.2 h
+  250/2996 done  84 min elapsed, ETA 15.3 h
+  260/2996 done  88 min elapsed, ETA 15.5 h
+  270/2996 done  90 min elapsed, ETA 15.2 h
+  280/2996 done  93 min elapsed, ETA 15.0 h
+  290/2996 done  96 min elapsed, ETA 14.9 h
+  300/2996 done  99 min elapsed, ETA 14.8 h
+  310/2996 done  102 min elapsed, ETA 14.7 h
+  320/2996 done  105 min elapsed, ETA 14.6 h
+  330/2996 done  108 min elapsed, ETA 14.5 h
+  340/2996 done  111 min elapsed, ETA 14.5 h
+  350/2996 done  114 min elapsed, ETA 14.4 h
+  360/2996 done  117 min elapsed, ETA 14.3 h
+  370/2996 done  121 min elapsed, ETA 14.3 h
+  380/2996 done  125 min elapsed, ETA 14.3 h
+  390/2996 done  127 min elapsed, ETA 14.2 h
+  400/2996 done  130 min elapsed, ETA 14.1 h
+  410/2996 done  134 min elapsed, ETA 14.1 h
+  420/2996 done  137 min elapsed, ETA 14.0 h
+  430/2996 done  141 min elapsed, ETA 14.0 h
+  440/2996 done  144 min elapsed, ETA 14.0 h
+  450/2996 done  147 min elapsed, ETA 13.9 h
+  460/2996 done  152 min elapsed, ETA 14.0 h
+  470/2996 done  156 min elapsed, ETA 14.0 h
+  480/2996 done  159 min elapsed, ETA 13.9 h
+  490/2996 done  163 min elapsed, ETA 13.9 h
+  500/2996 done  166 min elapsed, ETA 13.8 h
+  510/2996 done  169 min elapsed, ETA 13.8 h
+  520/2996 done  173 min elapsed, ETA 13.7 h
+  530/2996 done  177 min elapsed, ETA 13.7 h
+  540/2996 done  179 min elapsed, ETA 13.6 h
+  550/2996 done  183 min elapsed, ETA 13.6 h
+  560/2996 done  188 min elapsed, ETA 13.6 h
+  570/2996 done  190 min elapsed, ETA 13.5 h
+  580/2996 done  193 min elapsed, ETA 13.4 h
+  590/2996 done  195 min elapsed, ETA 13.3 h
+  600/2996 done  198 min elapsed, ETA 13.2 h
+  610/2996 done  201 min elapsed, ETA 13.1 h
+  620/2996 done  206 min elapsed, ETA 13.2 h
+  630/2996 done  211 min elapsed, ETA 13.2 h
+  640/2996 done  218 min elapsed, ETA 13.4 h
+  650/2996 done  221 min elapsed, ETA 13.3 h
+  660/2996 done  224 min elapsed, ETA 13.2 h
+  670/2996 done  227 min elapsed, ETA 13.1 h
+  680/2996 done  231 min elapsed, ETA 13.1 h
+  690/2996 done  234 min elapsed, ETA 13.0 h
+  700/2996 done  236 min elapsed, ETA 12.9 h
+  710/2996 done  240 min elapsed, ETA 12.9 h
+  720/2996 done  243 min elapsed, ETA 12.8 h
+  730/2996 done  247 min elapsed, ETA 12.8 h
+  740/2996 done  250 min elapsed, ETA 12.7 h
+  750/2996 done  253 min elapsed, ETA 12.6 h
+  760/2996 done  256 min elapsed, ETA 12.6 h
+  770/2996 done  261 min elapsed, ETA 12.6 h
+  780/2996 done  263 min elapsed, ETA 12.5 h
+  790/2996 done  266 min elapsed, ETA 12.4 h
+  800/2996 done  268 min elapsed, ETA 12.3 h
+  810/2996 done  272 min elapsed, ETA 12.2 h
+  820/2996 done  275 min elapsed, ETA 12.2 h
+  830/2996 done  278 min elapsed, ETA 12.1 h
+  840/2996 done  280 min elapsed, ETA 12.0 h
+  850/2996 done  284 min elapsed, ETA 12.0 h
+  860/2996 done  288 min elapsed, ETA 11.9 h
+  870/2996 done  291 min elapsed, ETA 11.8 h
+  880/2996 done  293 min elapsed, ETA 11.7 h
+  890/2996 done  295 min elapsed, ETA 11.6 h
+  900/2996 done  298 min elapsed, ETA 11.6 h
+  910/2996 done  301 min elapsed, ETA 11.5 h
+  920/2996 done  305 min elapsed, ETA 11.5 h
+  930/2996 done  308 min elapsed, ETA 11.4 h
+  940/2996 done  312 min elapsed, ETA 11.4 h
+  950/2996 done  315 min elapsed, ETA 11.3 h
+  960/2996 done  318 min elapsed, ETA 11.2 h
+  970/2996 done  322 min elapsed, ETA 11.2 h
+  980/2996 done  325 min elapsed, ETA 11.2 h
+  990/2996 done  328 min elapsed, ETA 11.1 h
+  1000/2996 done  331 min elapsed, ETA 11.0 h
+  1010/2996 done  335 min elapsed, ETA 11.0 h
+  1020/2996 done  338 min elapsed, ETA 10.9 h
+  1030/2996 done  341 min elapsed, ETA 10.9 h
+  1040/2996 done  344 min elapsed, ETA 10.8 h
+  1050/2996 done  347 min elapsed, ETA 10.7 h
+  1060/2996 done  351 min elapsed, ETA 10.7 h
+  1070/2996 done  354 min elapsed, ETA 10.6 h
+  1080/2996 done  357 min elapsed, ETA 10.6 h
+  1090/2996 done  361 min elapsed, ETA 10.5 h
+  1100/2996 done  364 min elapsed, ETA 10.5 h
+  1110/2996 done  367 min elapsed, ETA 10.4 h
+  1120/2996 done  372 min elapsed, ETA 10.4 h
+  1130/2996 done  377 min elapsed, ETA 10.4 h
+  1140/2996 done  380 min elapsed, ETA 10.3 h
+  1150/2996 done  385 min elapsed, ETA 10.3 h
+  1160/2996 done  390 min elapsed, ETA 10.3 h
+  1170/2996 done  394 min elapsed, ETA 10.2 h
+  1180/2996 done  396 min elapsed, ETA 10.2 h
+  1190/2996 done  399 min elapsed, ETA 10.1 h
+  1200/2996 done  402 min elapsed, ETA 10.0 h
+  1210/2996 done  405 min elapsed, ETA 10.0 h
+  1220/2996 done  408 min elapsed, ETA 9.9 h
+  1230/2996 done  411 min elapsed, ETA 9.8 h
+  1240/2996 done  414 min elapsed, ETA 9.8 h
+  1250/2996 done  417 min elapsed, ETA 9.7 h
+  1260/2996 done  421 min elapsed, ETA 9.7 h
+  1270/2996 done  424 min elapsed, ETA 9.6 h
+  1280/2996 done  428 min elapsed, ETA 9.6 h
+  1290/2996 done  432 min elapsed, ETA 9.5 h
+  1300/2996 done  434 min elapsed, ETA 9.4 h
+  1310/2996 done  438 min elapsed, ETA 9.4 h
+  1320/2996 done  441 min elapsed, ETA 9.3 h
+  1330/2996 done  444 min elapsed, ETA 9.3 h
+  1340/2996 done  447 min elapsed, ETA 9.2 h
+  1350/2996 done  449 min elapsed, ETA 9.1 h
+  1360/2996 done  453 min elapsed, ETA 9.1 h
+  1370/2996 done  457 min elapsed, ETA 9.0 h
+  1380/2996 done  459 min elapsed, ETA 9.0 h
+  1390/2996 done  463 min elapsed, ETA 8.9 h
+  1400/2996 done  465 min elapsed, ETA 8.8 h
+  1410/2996 done  469 min elapsed, ETA 8.8 h
+  1420/2996 done  474 min elapsed, ETA 8.8 h
+  1430/2996 done  478 min elapsed, ETA 8.7 h
+  1440/2996 done  480 min elapsed, ETA 8.6 h
+  1450/2996 done  485 min elapsed, ETA 8.6 h
+  1460/2996 done  489 min elapsed, ETA 8.6 h
+  1470/2996 done  491 min elapsed, ETA 8.5 h
+  1480/2996 done  494 min elapsed, ETA 8.4 h
+  1490/2996 done  497 min elapsed, ETA 8.4 h
+  1500/2996 done  499 min elapsed, ETA 8.3 h
+  1510/2996 done  503 min elapsed, ETA 8.2 h
+  1520/2996 done  506 min elapsed, ETA 8.2 h
+  1530/2996 done  509 min elapsed, ETA 8.1 h
+  1540/2996 done  511 min elapsed, ETA 8.1 h
+  1550/2996 done  514 min elapsed, ETA 8.0 h
+  1560/2996 done  517 min elapsed, ETA 7.9 h
+  1570/2996 done  521 min elapsed, ETA 7.9 h
+  1580/2996 done  524 min elapsed, ETA 7.8 h
+  1590/2996 done  527 min elapsed, ETA 7.8 h
+  1600/2996 done  530 min elapsed, ETA 7.7 h
+  1610/2996 done  535 min elapsed, ETA 7.7 h
+  1620/2996 done  539 min elapsed, ETA 7.6 h
+  1630/2996 done  543 min elapsed, ETA 7.6 h
+  1640/2996 done  547 min elapsed, ETA 7.5 h
+  1650/2996 done  550 min elapsed, ETA 7.5 h
+  1660/2996 done  555 min elapsed, ETA 7.4 h
+  1670/2996 done  559 min elapsed, ETA 7.4 h
+  1680/2996 done  561 min elapsed, ETA 7.3 h
+  1690/2996 done  566 min elapsed, ETA 7.3 h
+  1700/2996 done  569 min elapsed, ETA 7.2 h
+  1710/2996 done  573 min elapsed, ETA 7.2 h
+  1720/2996 done  576 min elapsed, ETA 7.1 h
+  1730/2996 done  580 min elapsed, ETA 7.1 h
+  1740/2996 done  582 min elapsed, ETA 7.0 h
+  1750/2996 done  586 min elapsed, ETA 7.0 h
+  1760/2996 done  590 min elapsed, ETA 6.9 h
+  1770/2996 done  593 min elapsed, ETA 6.8 h
+  1780/2996 done  595 min elapsed, ETA 6.8 h
+  1790/2996 done  598 min elapsed, ETA 6.7 h
+  1800/2996 done  601 min elapsed, ETA 6.7 h
+  1810/2996 done  605 min elapsed, ETA 6.6 h
+  1820/2996 done  608 min elapsed, ETA 6.5 h
+  1830/2996 done  610 min elapsed, ETA 6.5 h
+  1840/2996 done  613 min elapsed, ETA 6.4 h
+  1850/2996 done  616 min elapsed, ETA 6.4 h
+  1860/2996 done  619 min elapsed, ETA 6.3 h
+  1870/2996 done  622 min elapsed, ETA 6.2 h
+  1880/2996 done  625 min elapsed, ETA 6.2 h
+  1890/2996 done  629 min elapsed, ETA 6.1 h
+  1900/2996 done  632 min elapsed, ETA 6.1 h
+  1910/2996 done  636 min elapsed, ETA 6.0 h
+  1920/2996 done  639 min elapsed, ETA 6.0 h
+  1930/2996 done  643 min elapsed, ETA 5.9 h
+  1940/2996 done  647 min elapsed, ETA 5.9 h
+  1950/2996 done  650 min elapsed, ETA 5.8 h
+  1960/2996 done  654 min elapsed, ETA 5.8 h
+  1970/2996 done  659 min elapsed, ETA 5.7 h
+  1980/2996 done  661 min elapsed, ETA 5.7 h
+  1990/2996 done  665 min elapsed, ETA 5.6 h
+  2000/2996 done  668 min elapsed, ETA 5.5 h
+  2010/2996 done  673 min elapsed, ETA 5.5 h
+  2020/2996 done  678 min elapsed, ETA 5.5 h
+  2030/2996 done  684 min elapsed, ETA 5.4 h
+  2040/2996 done  686 min elapsed, ETA 5.4 h
+  2050/2996 done  692 min elapsed, ETA 5.3 h
+  2060/2996 done  697 min elapsed, ETA 5.3 h
+  2070/2996 done  699 min elapsed, ETA 5.2 h
+  2080/2996 done  702 min elapsed, ETA 5.2 h
+  2090/2996 done  704 min elapsed, ETA 5.1 h
+  2100/2996 done  707 min elapsed, ETA 5.0 h
+  2110/2996 done  710 min elapsed, ETA 5.0 h
+  2120/2996 done  714 min elapsed, ETA 4.9 h
+  2130/2996 done  716 min elapsed, ETA 4.9 h
+  2140/2996 done  719 min elapsed, ETA 4.8 h
+  2150/2996 done  722 min elapsed, ETA 4.7 h
+  2160/2996 done  725 min elapsed, ETA 4.7 h
+  2170/2996 done  729 min elapsed, ETA 4.6 h
+  2180/2996 done  732 min elapsed, ETA 4.6 h
+  2190/2996 done  735 min elapsed, ETA 4.5 h
+  2200/2996 done  738 min elapsed, ETA 4.5 h
+  2210/2996 done  742 min elapsed, ETA 4.4 h
+  2220/2996 done  745 min elapsed, ETA 4.3 h
+  2230/2996 done  748 min elapsed, ETA 4.3 h
+  2240/2996 done  751 min elapsed, ETA 4.2 h
+  2250/2996 done  754 min elapsed, ETA 4.2 h
+  2260/2996 done  757 min elapsed, ETA 4.1 h
+  2270/2996 done  761 min elapsed, ETA 4.1 h
+  2280/2996 done  764 min elapsed, ETA 4.0 h
+  2290/2996 done  767 min elapsed, ETA 3.9 h
+  2300/2996 done  770 min elapsed, ETA 3.9 h
+  2310/2996 done  774 min elapsed, ETA 3.8 h
+  2320/2996 done  777 min elapsed, ETA 3.8 h
+  2330/2996 done  782 min elapsed, ETA 3.7 h
+  2340/2996 done  785 min elapsed, ETA 3.7 h
+  2350/2996 done  790 min elapsed, ETA 3.6 h
+  2360/2996 done  794 min elapsed, ETA 3.6 h
+  2370/2996 done  797 min elapsed, ETA 3.5 h
+  2380/2996 done  799 min elapsed, ETA 3.4 h
+  2390/2996 done  802 min elapsed, ETA 3.4 h
+  2400/2996 done  805 min elapsed, ETA 3.3 h
+  2410/2996 done  809 min elapsed, ETA 3.3 h
+  2420/2996 done  813 min elapsed, ETA 3.2 h
+  2430/2996 done  816 min elapsed, ETA 3.2 h
+  2440/2996 done  820 min elapsed, ETA 3.1 h
+  2450/2996 done  823 min elapsed, ETA 3.1 h
+  2460/2996 done  827 min elapsed, ETA 3.0 h
+  2470/2996 done  831 min elapsed, ETA 3.0 h
+  2480/2996 done  835 min elapsed, ETA 2.9 h
+  2490/2996 done  839 min elapsed, ETA 2.8 h
+  2500/2996 done  843 min elapsed, ETA 2.8 h
+  2510/2996 done  848 min elapsed, ETA 2.7 h
+  2520/2996 done  851 min elapsed, ETA 2.7 h
+  2530/2996 done  855 min elapsed, ETA 2.6 h
+  2540/2996 done  860 min elapsed, ETA 2.6 h
+  2550/2996 done  863 min elapsed, ETA 2.5 h
+  2560/2996 done  867 min elapsed, ETA 2.5 h
+  2570/2996 done  872 min elapsed, ETA 2.4 h
+  2580/2996 done  875 min elapsed, ETA 2.4 h
+  2590/2996 done  879 min elapsed, ETA 2.3 h
+  2600/2996 done  883 min elapsed, ETA 2.2 h
+  2610/2996 done  887 min elapsed, ETA 2.2 h
+  2620/2996 done  891 min elapsed, ETA 2.1 h
+  2630/2996 done  895 min elapsed, ETA 2.1 h
+  2640/2996 done  897 min elapsed, ETA 2.0 h
+  2650/2996 done  904 min elapsed, ETA 2.0 h
+  2660/2996 done  908 min elapsed, ETA 1.9 h
+  2670/2996 done  910 min elapsed, ETA 1.9 h
+  2680/2996 done  913 min elapsed, ETA 1.8 h
+  2690/2996 done  1277 min elapsed, ETA 2.4 h
+  2700/2996 done  1280 min elapsed, ETA 2.3 h
+  2710/2996 done  1283 min elapsed, ETA 2.3 h
+  2720/2996 done  1287 min elapsed, ETA 2.2 h
+  2730/2996 done  1290 min elapsed, ETA 2.1 h
+  2740/2996 done  1294 min elapsed, ETA 2.0 h
+  2750/2996 done  1298 min elapsed, ETA 1.9 h
+  2760/2996 done  1302 min elapsed, ETA 1.9 h
+  2770/2996 done  1306 min elapsed, ETA 1.8 h
+  2780/2996 done  1310 min elapsed, ETA 1.7 h
+  2790/2996 done  1314 min elapsed, ETA 1.6 h
+  2800/2996 done  1318 min elapsed, ETA 1.5 h
+  2810/2996 done  1322 min elapsed, ETA 1.5 h
+  2820/2996 done  1326 min elapsed, ETA 1.4 h
+  2830/2996 done  1330 min elapsed, ETA 1.3 h
+  2840/2996 done  1335 min elapsed, ETA 1.2 h
+  2850/2996 done  1338 min elapsed, ETA 1.1 h
+  2860/2996 done  1342 min elapsed, ETA 1.1 h
+  2870/2996 done  1347 min elapsed, ETA 1.0 h
+  2880/2996 done  1350 min elapsed, ETA 0.9 h
+  2890/2996 done  1354 min elapsed, ETA 0.8 h
+  2900/2996 done  1358 min elapsed, ETA 0.7 h
+  2910/2996 done  1362 min elapsed, ETA 0.7 h
+  2920/2996 done  1366 min elapsed, ETA 0.6 h
+  2930/2996 done  1371 min elapsed, ETA 0.5 h
+  2940/2996 done  1373 min elapsed, ETA 0.4 h
+  2950/2996 done  1380 min elapsed, ETA 0.4 h
+  2960/2996 done  1385 min elapsed, ETA 0.3 h
+  2970/2996 done  1387 min elapsed, ETA 0.2 h
+  2980/2996 done  1390 min elapsed, ETA 0.1 h
+  2990/2996 done  1394 min elapsed, ETA 0.0 h
+  2996/2996 done  1396 min elapsed, ETA 0.0 h
+
+===== per-design MC moments =====
+-- p1_det: N=300 captured 300  E[Qs] 139.2 (sur 141.2)  sd 32.0 (sur 33.7)  E[sg] 3848 ± 133 km (sur 5268)
+-- p1_rob: N=300 captured 300  E[Qs] 94.8 (sur 95.1)  sd 19.6 (sur 20.5)  E[sg] 4018 ± 155 km (sur 5163)
+-- p2_det: N=300 captured 300  E[Qs] 152.1 (sur 152.8)  sd 36.1 (sur 37.2)  E[sg] 3701 ± 128 km (sur 5029)
+-- p2_rob: N=300 captured 300  E[Qs] 107.6 (sur 109.1)  sd 23.8 (sur 25.0)  E[sg] 3707 ± 148 km (sur 4929)
+-- p3_det: N=300 captured 300  E[Qs] 174.7 (sur 173.9)  sd 42.7 (sur 43.8)  E[sg] 4100 ± 157 km (sur 5063)
+-- p3_rob: N=300 captured 300  E[Qs] 100.4 (sur 100.6)  sd 21.3 (sur 22.2)  E[sg] 3889 ± 148 km (sur 4963)
+-- p4_det: N=300 captured 300  E[Qs] 199.0 (sur 196.2)  sd 49.0 (sur 49.7)  E[sg] 4549 ± 182 km (sur 5203)
+-- p4_rob: N=300 captured 300  E[Qs] 80.0 (sur 82.3)  sd 15.4 (sur 16.4)  E[sg] 4456 ± 173 km (sur 5099)
+-- p5_det: N=300 captured 299  E[Qs] 244.8 (sur 243.3)  sd 58.1 (sur 59.9)  E[sg] 4829 ± 158 km (sur 5851)
+-- p5_rob: N=300 captured 300  E[Qs] 180.7 (sur 179.8)  sd 39.5 (sur 41.4)  E[sg] 5220 ± 182 km (sur 5735)
+
+===== pair-level: does the match and the sigma cut survive the simulator? =====
+pair 1: E_Qs ratio  sur 0.674  MC 0.681 ± 0.012   E_sg ratio  sur 0.980  MC 1.044 ± 0.054   sigma cut  sur +39.2%  MC +38.7%
+pair 2: E_Qs ratio  sur 0.714  MC 0.707 ± 0.013   E_sg ratio  sur 0.980  MC 1.002 ± 0.053   sigma cut  sur +32.8%  MC +34.2%
+pair 3: E_Qs ratio  sur 0.578  MC 0.575 ± 0.011   E_sg ratio  sur 0.980  MC 0.948 ± 0.051   sigma cut  sur +49.4%  MC +50.1%
+pair 4: E_Qs ratio  sur 0.420  MC 0.402 ± 0.007   E_sg ratio  sur 0.980  MC 0.979 ± 0.055   sigma cut  sur +67.1%  MC +68.5%
+pair 5: E_Qs ratio  sur 0.739  MC 0.738 ± 0.014   E_sg ratio  sur 0.980  MC 1.081 ± 0.052   sigma cut  sur +30.9%  MC +32.0%
+
+saved F:\My documents\Thesis Extension\capsule_opt\uq\data/verify_mc_pairs_summary.csv

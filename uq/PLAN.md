@@ -171,8 +171,12 @@ Robust run: 10.5 h overnight, pop 150 × 200 gens, 100% feasible →
 (`uq/audit.py`, 426 s): σ_Qs median 30.3 MJ/m² (CV 22.8%), P_exc(q_stag)
 >1% on 25% of det designs (max 6.8%), P_exc(q_shldr) max 10%, P(n_max)
 ≈ 0, robust-feasible 92% of det front. **Headline**: matched-performance
-pairs (E_Qs +2%, sg −2%): 5268/5371 = 98% favor robust on σ_Qs, median
-σ cut 43.5%; robust front worst-member P_exc halves (4.8%/6.6% vs
+pairs (E_Qs +2%, sg −2%): 5371 pairs, 98.1% favor robust on σ_Qs; median
+σ cut 35.0% best-match-per-design (fig2 ECDF median; pair-level median
+27.5%). [CORRECTED 2026-10-10: the previously quoted 43.5% was a one-off
+audit-day mis-definition — not reproducible under any standard window;
+authoritative numbers in paper/tables/table4_matched_pairs.csv.]
+Robust front worst-member P_exc halves (4.8%/6.6% vs
 6.8%/10%); σ floor identical on both fronts — **16.4 MJ/m² / CV 19.9% =
 irreducible dispersion floor set by the uncertainty model, not shape**.
 Strict 4-way dominance rare (30/30000) as expected. Next: figures.py +
@@ -249,6 +253,56 @@ absolute values conservative-high. The load-bearing claims (σ_Qs objective,
 E+2σ constraints, audit P_exc) are simulator-verified. Files:
 `uq/data/verify_mc.csv`, `verify_mc_summary.csv`, `uq/logs/verify_mc_log.txt`.
 
+### Paper area restructured (2026-10-10): `paper/` + `uq/tables.py`
+
+figures.py now writes to `paper/figures/` (three files renamed:
+fig2_matched_sigma_cut, fig5_design_space_sigma_map, fig6_probe_true_sigma;
+old uq/figures/ deleted). Frozen descriptive-named data copies in
+`paper/data/` (9 files), manuscript tables via NEW `uq/tables.py` →
+`paper/tables/` (table1 knee designs physical units, table2 verification
+copy, table3 audit headline, table4 matched pairs), interactive HTML in
+`paper/supplementary/`. Provenance map: `paper/README.md` (uq scripts →
+paper assets, never edit paper/ copies directly). Pipeline untouched
+(knee.py/audit.py/verify_mc.py still read/write uq/data).
+
+### Reviewer hardening trio DONE (2026-10-10)
+
+1. **sanity_check.py FIXED for v2** (engine-based, t_max=14400, capture-skip,
+   branch-matched sg): 10 random designs at z0 — Qs/q_stag/q_shldr/n_max all
+   PASS (medians 0.35–1.34% vs gate bands); sg-slow PASS (5.1% vs 15%
+   irreducible); sg-fast median 3.8% == band with one 12% outlier in 9 pts
+   (sampling noise around the n=2800 gate; not a contradiction); mixture
+   mean vs single realization documented as structural branch gap (E[sg]
+   bias is verified by verify_mc instead). Envelope: feasible-DOE sg
+   [1,524, 19,090] km contains thesis Table 6.2 ✓.
+2. **Det seed repeatability** (optimize.py gained SEED argv; seeds 2/3 =
+   189/186 s, 100% feasible, opt_det_s{2,3}.csv): objective stats
+   near-identical across seeds (η_V medians 0.805–0.811; sg medians
+   15.4–15.7 Mm); merged ND set 508/600 with contributions 166/167/175;
+   pairwise cross-domination ≤ 14%. `uq/seed_check.py` → paper/tables/
+   table5_det_seed_repeatability.csv.
+3. **Convergence evidence** (`uq/convergence.py` → paper/supplementary/
+   figS1_nsga2_convergence.{png,pdf}): fronts fill by gen 3–4 in all runs;
+   ε decays to 6e-3–1e-2 recombination floor and stays there.
+
+New files this session (uncommitted): sanity_check.py (rewritten),
+optimize.py (seed arg), convergence.py, seed_check.py, figS1, table5,
+opt_det_s2/s3.csv + logs.
+
+### Manuscript skeleton + paper organization (2026-10-10, end of day)
+
+ALL COMPUTE IS DONE (see blocks above). Since then: repo organized into
+`paper/{figures,data,tables,supplementary,thesis_assets,manuscript}`
+(provenance map paper/README.md; uq/ pipeline untouched; references/ +
+validation_data/ moved OUTSIDE the repo by user -- build_reference_data.py
+parents[2] still resolves); 11 __pycache__ purged; thesis folder inventoried
+(THESIS_ASSETS.md: silhouettes/validation/restyle templates + docx media
+extracted). Manuscript: main.tex (elsarticle) + sections/01-08 via \input,
+References LAST (floats [htbp] + \clearpage fix), refs.bib 17 entries (9
+[VERIFY] markers to fill), draft abstract, 5 data tables, 6 live figures.
+Compiles 11 pp / 0 errors. NEXT: draft prose sec 01 (intro +
+differentiation) first; author details pending from user.
+
 ## Explicitly NOT in this cycle
 
 RBDO/probabilistic constraints (paper #2) · density/mass uncertainty families ·
@@ -293,3 +347,178 @@ to 5-fold CV (mean ± std R²/RMSE) for a sturdier gate. On-disk `gp_*.joblib`
 are the log-space fits from today — diagnostic only, everything refits on the
 bigger DOE. Useful for the paper later: peak-heating ARD says k_CD/k_CL nearly
 irrelevant (ls ≈ 32–47) — peak q̇ is set by local ρ,V at peak deceleration.
+
+## 2026-10-12 — REVISION LOOP (external review of the full draft)
+
+External review verdict: publishable core, but four hardening asks before
+submission. Response plan (Phase A zero-compute + Phase B overnight + Phase C
+user inputs):
+
+- **A1/A2 `uq/sens.py`** — re-evaluate BOTH saved fronts through the moment
+  engine under alternative uncertainty models (sigma_k 0.03/0.07, rho(k)=0.8,
+  sigma_gamma0 0.25/0.75 deg; same LHS seed 42, gamma0/V0 quantiles shared
+  with base) + matching-window sensitivity (1/2/3/5%). Output:
+  paper/tables/table6_sensitivity.csv. 'base' variant must reproduce the
+  published numbers (5,371 / 98.1% / 27.5% / 35.0%; floor 16.4; Pexc shldr
+  max 10.0%) — correctness anchor.
+- **A3 Appendix A** (sections/09_appendix_validation.tex) — identity-violation
+  table, guidance variant family, deviations list: the reference-case
+  forensics moved INTO the paper (reviewer: "a reviewer will need to see the
+  evidence").
+- **A4 manuscript edits** — "component-validated" phrasing (not "validated
+  1–3% where it matters"), numerics-vs-mission separation sentence,
+  claims-dependency paragraph (end of Sec 2.4), k-independence
+  acknowledgment (Sec 3.1), E+2sigma non-interpretation sentence (Sec 4.2),
+  bias/window cross-refs (Sec 7), Sec 5.7 sensitivity subsection w/ table.
+- **B (user-launched nights)** robust seeds 2+3 (`python -m uq.optimize
+  robust 150 200 infl off 2` then `3`) → seed_check 3+3 table + per-seed
+  headline stats; **`uq/verify_mc_guidance.py`** (written+patch-checked
+  10-12: Eq-2.40-as-printed law via make_gated_bank, 5 designs x 300 to
+  uq/data/verify_mc_g40.csv, MC-vs-MC summary) — "conclusions survive the
+  guidance law" evidence.
+- **C** RESS-2025 + Hashemi refs from user; supervisor pass.
+
+NOT doing: front re-optimization under the alternate law (within-CRN argument
++ MC guidance bracket instead), 6-DOF, density dispersion (paper #2).
+
+## 2026-10-14 — THIRD external review answered (matching + range-bias audit)
+
+Reviewer verdict: 2 critical / 3 high / 1 medium. Code audit confirmed
+both criticals are real: the 35.0% design-level median is
+`groupby('i')['cut'].max()` (outcome-selective), and the sec-6 "bias
+acts in the same direction on both fronts so matching is unaffected"
+argument was invalid — our own MC measures the differential.
+
+New work, all zero-simulator-compute (front CSVs only):
+
+- **`uq/matching.py`** — matching-construction audit; base reproduces
+  5,371 / 98.1% / 27.5% / 35.0% exactly (anchor).
+  * Prespecified NEAREST-eligible-match rule (min relative distance in
+    (E_Qs, E_sg); ties by front index): **84.2% of designs beaten,
+    median cut 4.3%**. Gap vs the envelope is structural: eligible
+    partners span a median σ-factor 1.49 at matched performance (σ is
+    traded against η_V); nearest partners sit at the 11th σ-percentile
+    of the robust front in the low-E_Qs tercile (both fronts on the
+    floor) and the 81st in the high tercile. Envelope cut by tercile
+    14.6/45.8/63.7%; nearest 1.5/14.5/2.2%.
+  * E_sg-leg widening (heat-load leg fixed at +2%): preference
+    98.1→97.2%, pair median cut 27.5→32.2% (monotone) out to complete
+    removal → bounds any differential range bias entering via the
+    matching. → `paper/tables/table7_matching_construction.csv`.
+- **table4 + fig2 regenerated**: fig2 now two ECDFs (nearest green
+  dashed / envelope black); table4 gained nearest-match rows + the
+  partner σ-spread row.
+- **Manuscript** (41 pp, 0 errors): abstract/intro/conclusions lead
+  with pair-level 27.5%, 35.0% labeled σ-envelope; sec 5.2 rewritten
+  (three statistics + explicit non-independence sentence — pairs share
+  designs, descriptive only; no binomial CI anywhere, grep-verified);
+  sec 5.7 E_sg-leg sentence; sec 6: non-capture explained (det_fragile
+  sample 204: γ0 −0.52° ≈3σ shallow, k_CL 1.07 → loft still airborne at
+  t_max under BOTH guidance laws; brackets 29–30/300 = 9.7–10.0%, g40
+  17.0–17.3%) and the "unaffected" paragraph replaced by the measured
+  differential: bias factors 1.10–1.39 (det 1.25–1.33, robust 1.10–1.39,
+  no front-systematic difference); knee pair truth: range ratio −2.1%
+  sur → −6.6% MC, heat-load leg holds (−6.4%), σ cut grows 3.7→5.1%;
+  MC SE(E[sg]) 3.5–4% at N=300 → a 2% range window is beyond any
+  feasible verification budget; the heat-load leg (−3.2…+1.4%) carries
+  the matching. Sec 7: range-surrogate bullet now "bounded, not
+  cancelled"; 5% band stated as engineering assumption, not posterior.
+- Already satisfied before this review (verified, no edit needed): 5%
+  framing (sec 3.1 calibration table + Kennedy–O'Hagan wording), floor
+  scoping (sec 5.1 + conclusions), seed table 3+3 (app B).
+
+OPEN (user decision) → RESOLVED 2026-10-16: stratified matched-pair MC
+RAN + folded into sec 6 (see next entry). The zero-compute bounds above
+remain in the manuscript as the backstop; the measurement now leads.
+
+### 2026-10-14 (evening) — USER GO for the pairs MC; `uq/verify_mc_pairs.py` WRITTEN + SMOKE-PASSED
+
+Design findings while building it (both from the front CSVs):
+- Tight pairs (BOTH window legs binding, |ratio| ≤ 2%: only 136 of
+  5,371) have a median cut of **+0.4%** — the σ advantage is carried by
+  the one-sided slack of the window (robust designs delivering less heat
+  load at no less range), not by equal-performance designs differing in
+  σ alone. Added as a sentence in sec 5.2 (preempt — a careful reviewer
+  would find it).
+- Naive selections are degenerate or uninformative: quintile-median
+  NEAREST pairs cut only 0.6–5% in 4/5 quintiles (below MC resolution
+  ~5–7% SE on a cut); quintile-median ENVELOPE pairs collapse onto the
+  floor design (rob row 3) for 4/5 quintiles with −26…−58% heat-load
+  slack (trivial match, redundant with rob_floor verification).
+- **Selected design = ADVERSARIAL stress set**: among pairs with cut ≥
+  the pair-median threshold (27.5%, deterministic), per E_Qs quintile
+  the pair with the LEAST E_sg slack (ratio pinned at −2.0%). Selected:
+  det{65,167,143,121,134} ↔ rob{72,139,142,3,75}; surrogate cuts
+  +31…+67%; E_Qs ratio −26…−58% (leg verified ±3.2%, holds trivially);
+  E_sg ratio at the boundary = maximally bias-exposed → if the
+  differential bias breaks the comparison anywhere it breaks here
+  first. Interpretation of the E_sg column = measured differential, not
+  window pass/fail.
+- Machinery reuses verify_mc.py (same z-LHS seed 2026 sliced to 300 →
+  CRN across pair members AND shared with the 5 headline designs);
+  staging uq/data/verify_mc_pairs.csv keyed (design_id, isamp),
+  resume-safe, selection is a fixed 5-pair prefix (smoke rows count);
+  matching.py gained a robust-row-index column 'j'. Smoke (2 sims ×
+  pair 1): PASS — 4 rows staged, summary prints pair-level
+  surrogate-vs-MC ratios + cut.
+- LAUNCH (user, foreground+Tee, from capsule_opt, ~19–20 h):
+  `C:\Users\xamii\anaconda3\python.exe -m uq.verify_mc_pairs | Tee-Object -FilePath uq\logs\verify_mc_pairs_log.txt`
+  Morning after: fold results into sec 6 (one paragraph: differential
+  bias measured on 5 stress pairs + cut confirmation) + recompile.
+  [Status at day close: NOT yet launched — staging file holds only the
+  4 smoke rows; resume-free start.]
+
+### 2026-10-15/16 — PAIRS MC DONE + FOLDED INTO SEC 6 (Claude, on plan)
+
+Launched by Claude 10-15 07:26 on explicit user instruction ("you launch
+it"), background task bhzyi1rfa, same Tee command. **DONE 10-16 ~00:45:
+2,996/2,996 (4 smoke rows reused), 1,396 min ≈ 23.3 h, 0 failures,
+2,999/3,000 captured** (single non-capture = p5_det shallow lofted draw).
+
+RESULTS (`uq/data/verify_mc_pairs{,_summary}.csv`, log
+`uq/logs/verify_mc_pairs_log.txt`):
+- **σ-cut CONFIRMED, the point of the run**: sur +30.9/+32.8/+49.4/
+  +67.1/+30.9% → MC +38.7/+34.2/+50.1/+68.5/+32.0% (deviation ≤1.4 pp
+  per pair; MC larger in 4/5). Cut survives the simulator essentially
+  exactly, incl. the biggest (+67→+68.5%).
+- **E_Qs ratios confirmed**: sur 0.674/0.714/0.578/0.420/0.739 vs MC
+  0.681/0.707/0.575/0.402/0.738 — max deviation 4.3% (pair 4) and it
+  UNDERSTATES the robust advantage.
+- **E_sg differential bounded, robust-favouring**: members' bias factors
+  det 1.14–1.37, rob 1.10–1.33 (all inside disclosed 1.10–1.39);
+  measured pair E_sg ratios (sur matched at 0.980) = 1.044/1.002/0.948/
+  0.979/1.081, mean 1.011 ± ~0.023 → matched robust designs give up no
+  range in truth; det bias larger in 4/5 pairs (mean 1.264 vs 1.227).
+- Floor replicates trivially (p4_rob = rob row 3 = floor design, same z
+  set as verify_mc → MC sd 15.4 identical, NOT an independent draw).
+- Per-design E[Qs] within −2.8/+1.4%, σ sur ≥ MC all 10 (conservative).
+
+MANUSCRIPT (folded 10-16 morning, per plan): sec 6 gained the
+stress-pair paragraph after the knee-pair evidence — selection rule,
+3,000 runs, cut confirmation, E_Qs leg, measured differential + mean
+ratio 1.01, "rest on direct measurement, not only on the bounds";
+"Two bounds" sentence rescoped to "pairs not verified directly"; one-pair
+phrase renamed "matched knee pair"; reading-guide range widened
+10–30% → 9–37% across the fifteen verified designs. Recompiled:
+**42 pp, 0 errors, 0 unresolved refs**; refs pp.37–38 then appendices
+pp.39–40+ (order directive holds); paragraph renders p.31. paper/data
+gained verification_mc_pairs_3000runs.csv + _summary.csv; paper/README
+provenance updated. ALL COMPUTE FOR THE PAPER IS NOW DONE — remaining
+is human: user read-through, user commit Vf4.1, submission kit,
+optional geometry schematic, supervisor pass.
+
+### 2026-10-14 (day close) — seed_check re-run DONE; review-3 round fully closed
+
+`python -m uq.seed_check` re-run with the extended front_stats (anchors
+reproduced: seed-1 nearest = 0.842 / 0.043). Per-seed nearest-match:
+designs improved **68.9–84.2%**, median cut **1.9–4.3%** — the most
+seed-sensitive reported statistic (single arbitrary partner per design);
+conclusion (majority improved under strictest rule) holds on every seed.
+Manuscript: Appendix B table gained the two nearest-match rows + prose
+note; sec 5.7 seed sentence gained the clause. Recompiled: **41 pp,
+0 errors, 0 unresolved refs** (includes the sec 5.2 tight-pair sentence).
+Review 3 is now fully answered in the manuscript except the optional
+pairs-MC armor awaiting launch above. Uncommitted delta now includes:
+uq/{matching.py, verify_mc_pairs.py, seed_check.py edit, sens.py edit,
+tables.py edit, figures.py edit}, paper/tables/table4+5b+7, fig2,
+sections 01/05/06/07/08/10, main.tex, PLAN.md.

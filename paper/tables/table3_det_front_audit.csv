@@ -1,0 +1,16 @@
+statistic,value,unit
+sigma_Qs median,30.29403487146283,MJ/m2
+sigma_Qs range,16.4 - 66.7,MJ/m2
+CV(Qs) median,0.22847823828725752,-
+P(q_stag_max > limit) median,0.0003057249265736,-
+P(q_stag_max > limit) max,0.0679550083817422,-
+fraction P(q_stag_max) > 1%,0.25,-
+P(q_shldr_max > limit) median,0.00045698353609675,-
+P(q_shldr_max > limit) max,0.0996991403508057,-
+fraction P(q_shldr_max) > 1%,0.235,-
+P(n_max > limit) median,0.0015650920002859,-
+P(n_max > limit) max,0.0096297025148534,-
+fraction P(n_max) > 1%,0.0,-
+P(slow) median,0.4305791746076286,-
+P(slow) range,0.353 - 0.490,-
+robust-feasible fraction of det front,0.92,-

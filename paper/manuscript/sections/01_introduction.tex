@@ -1,0 +1,86 @@
+%======================================================================
+% 1. INTRODUCTION
+%======================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The external geometry of a ballistic entry capsule settles most of its entry
+performance before a single trajectory is flown. Nose radius, shoulder radius
+and afterbody cone half-angle set the force coefficients and the trim and
+stability characteristics, and through them the integrated heat load, the
+attainable ground range and the enclosed payload volume. Shape optimization
+therefore resolves a three-way trade between thermal load, mobility and
+volumetric efficiency, under limits on peak heating, deceleration and static
+stability. In most of the literature this trade is resolved deterministically:
+one nominal entry state and one aerodynamic model are assumed, and dispersion
+is absorbed downstream by margins in the thermal-protection and guidance
+design, without feedback into the shape itself.
+
+Deterministic capsule shape optimization is well explored. Dirkx and Mooij
+\cite{dirkx2014,dirkx2017entry} optimize capsule shapes with
+local-inclination aerothermal models and evolutionary algorithms; the
+present simulation chain descends from that work. Related aerodynamic
+capsule designs and parameterized-shape optimizations are reported by Chen
+et al.\ \cite{chen2015}, and the surrogate-modelling toolbox behind such
+workflows \cite{forrester2008surrogate} rests on the
+design-and-analysis-of-computer-experiments literature
+\cite{sacks1989,jones1998}.
+The uncertainty-aware literature is thinner. Ridolfi et al.\
+\cite{ridolfi2012robust} made a multi-disciplinary capsule optimization
+robust to uncertainty in design parameters and mission conditions, and
+Ghaedamini Harouni and Hashemi Mehneh \cite{hashemi2019capsule} solved a
+robust multi-objective capsule shape problem --- maximizing volumetric
+efficiency among the objectives --- with adaptive Monte-Carlo inner loops,
+reporting constraint satisfaction at a 99.8\% confidence level. Both
+establish that robustness can be enforced on capsule shape design; neither
+compares the robust result against a deterministic baseline solved on the
+same physics, which is what isolates the effect of the formulation itself.
+The general theory of robust optimization \cite{beyer2007robust} and the
+reliability-based tradition surveyed by Valdebenito and Schu\"eller
+\cite{valdebenito2010} flag two recurring obstacles that are visible in
+these applications: the cost of the inner uncertainty propagation, and the
+weak evidence base of the uncertainty model itself.
+
+For capsule shape design specifically, three gaps remain. First, the
+uncertainty bands entering robust or reliability-based formulations are
+usually assumed: entry-state dispersions are inherited from targeting
+budgets, and aerodynamic model-form error is assigned a round percentage with
+little justification. Second, deterministic and robust formulations are
+rarely solved on the same validated physics, so any reported ``benefit of
+robustness'' mixes the formulation change with model and solver differences.
+Third, the cost of ignoring uncertainty is seldom quantified, and even less
+often verified: what a deterministic front hides in constraint-exceedance
+probability and objective dispersion is typically not measured against the
+true model.
+
+This paper closes the three gaps with a controlled comparison on a single
+simulation chain. The uncertainty model is evidence-based: entry-state
+dispersion (flight-path angle, entry speed) is combined with a multiplicative
+aerodynamic model-form uncertainty whose 5\% standard deviation is sized from
+the residuals of a validation campaign against Apollo wind-tunnel and flight
+data, not chosen for convenience. Deterministic and robust formulations of
+the same three-objective problem are then solved on the same Gaussian-process
+surrogates, evaluated by a common-random-number moment engine so that the two
+fronts are directly comparable, and the deterministic front is additionally
+audited under the full uncertainty model. The comparison is quantified rather
+than asserted: at matched expected performance, robust designs cut the
+standard deviation of integrated heat load in 98.1\% of 5{,}371 design pairs
+(pair-level median 27.5\%; 35.0\% against the robust front's
+$\sigma$-envelope at matched performance), while the deterministic front
+conceals
+shoulder-heating exceedance probabilities up to 10\%, confirmed at 9.7\% by
+Monte-Carlo simulation of the full model. An irreducible dispersion floor of
+\SI{16}{\mega\joule\per\square\metre} (coefficient of variation about 20\%)
+bounds both fronts and is set by the flight-path-angle dispersion, not by
+geometry. Finally, selected designs are verified against the trajectory
+simulator itself, 1{,}500 runs in total; the same exercise exposes a
+systematic bias of the mixture surrogate in predicted range, which we
+disclose and bound.
+
+Section~\ref{sec:model} describes the vehicle model and its validation.
+Sections~\ref{sec:surrogate} and \ref{sec:formulation} present the
+uncertainty model, the surrogate construction and its accuracy gate, and the
+two design formulations. Section~\ref{sec:results} reports the front
+comparison, Section~\ref{sec:verification} the Monte-Carlo verification, and
+Sections~\ref{sec:discussion} and \ref{sec:conclusions} the discussion and
+conclusions.

@@ -9,7 +9,9 @@ robust : min (-eta_V, E[Qs], -E[sg], sd[Qs]); peaks as E + 2*sd <= limit
          only); P(slow) <= 0.05; geometry margins as in det.
 
 Usage: python -m uq.optimize det|robust [POP=200] [GENS=300] [infl|plain]
-                       [P_SLOW=off|<float>]
+                       [P_SLOW=off|<float>] [SEED=1]
+SEED != 1 writes uq/data/opt_<mode>_s<seed>.csv (seed repeatability runs);
+seed 1 keeps the canonical opt_<mode>.csv name.
 P_SLOW: 'off' (default; diag_robust_feasible showed P_slow = 0.34-0.59 over
 the whole design space -- a small budget empties the feasible set, so the
 loft probability is carried as a reported quantity, not a constraint) or a
@@ -98,28 +100,33 @@ def wide_frame(eng, X, F, G, mode, p_slow_max):
 
 
 def main():
+    if os.name == 'nt':  # keep awake while the run goes (doe.py pattern)
+        import ctypes
+        ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
     mode = sys.argv[1] if len(sys.argv) > 1 else 'robust'
     pop = int(sys.argv[2]) if len(sys.argv) > 2 else 200
     gens = int(sys.argv[3]) if len(sys.argv) > 3 else 300
     sd_kind = sys.argv[4] if len(sys.argv) > 4 else 'infl'
     a5 = sys.argv[5] if len(sys.argv) > 5 else 'off'
     p_slow_max = None if a5 == 'off' else float(a5)
+    seed = int(sys.argv[6]) if len(sys.argv) > 6 else 1
     assert mode in ('det', 'robust') and sd_kind in ('infl', 'plain')
 
     t0 = time.time()
     eng = MomentEngine(n_z=N_Z_LOOP)
     print(f"engine loaded {time.time() - t0:.0f} s | mode={mode} "
           f"pop={pop} gens={gens} sd={sd_kind} p_slow={p_slow_max} "
-          f"n_z_loop={N_Z_LOOP}", flush=True)
+          f"n_z_loop={N_Z_LOOP} seed={seed}", flush=True)
     prob = CapsuleSurrogate(eng, mode, sd_kind, p_slow_max)
     res = minimize(prob, NSGA2(pop_size=pop),
-                   get_termination('n_gen', gens), seed=1, verbose=True)
+                   get_termination('n_gen', gens), seed=seed, verbose=True)
 
     X, F, G = res.pop.get('X'), res.pop.get('F'), res.pop.get('G')
     eng_rep = eng if mode == 'det' else MomentEngine(n_z=N_Z_REPORT)
     df = wide_frame(eng_rep, X, F, G, mode, p_slow_max)
     feas = (G <= 0).all(axis=1)
-    out = os.path.join(HERE, f'data/opt_{mode}.csv')
+    sfx = '' if seed == 1 else f'_s{seed}'
+    out = os.path.join(HERE, f'data/opt_{mode}{sfx}.csv')
     df.to_csv(out, index=False)
     print(f"DONE {time.time() - t0:.0f} s | pop {len(df)} | feasible "
           f"{feas.mean():.1%} | saved {out}", flush=True)

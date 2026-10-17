@@ -1,0 +1,52 @@
+[base] moments det(n=200) + rob(n=150) ...
+C:\Users\xamii\anaconda3\Lib\site-packages\joblib\externals\loky\backend\context.py:136: UserWarning: Could not find the number of physical cores for the following reason:
+[WinError 2] The system cannot find the file specified
+Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+  warnings.warn(
+  File "C:\Users\xamii\anaconda3\Lib\site-packages\joblib\externals\loky\backend\context.py", line 257, in _count_physical_cores
+    cpu_info = subprocess.run(
+        "wmic CPU Get NumberOfCores /Format:csv".split(),
+        capture_output=True,
+        text=True,
+    )
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+[base] floor=16.4 detSdMed=30.3 pairs=5371 favor=0.981 designcut=0.350
+[k03] moments det(n=200) + rob(n=150) ...
+[k03] floor=16.0 detSdMed=29.9 pairs=5316 favor=0.981 designcut=0.354
+[k07] moments det(n=200) + rob(n=150) ...
+[k07] floor=16.8 detSdMed=30.8 pairs=5418 favor=0.980 designcut=0.344
+[kcorr] moments det(n=200) + rob(n=150) ...
+[kcorr] floor=16.2 detSdMed=30.1 pairs=5238 favor=0.980 designcut=0.352
+[g025] moments det(n=200) + rob(n=150) ...
+[g025] floor=13.0 detSdMed=24.1 pairs=7398 favor=0.986 designcut=0.430
+[g075] moments det(n=200) + rob(n=150) ...
+[g075] floor=20.5 detSdMed=37.4 pairs=3719 favor=0.963 designcut=0.338
+[windows] base moments cached per front ...
+[win1] pairs= 4,766 favor=0.991 paircut=0.278 designcut=0.344
+[win2] pairs= 5,371 favor=0.981 paircut=0.275 designcut=0.350
+[win3] pairs= 5,935 favor=0.969 paircut=0.273 designcut=0.358
+[win5] pairs= 7,136 favor=0.944 paircut=0.265 designcut=0.374
+
+written: F:\My documents\Thesis Extension\capsule_opt\paper\tables\table6_sensitivity.csv

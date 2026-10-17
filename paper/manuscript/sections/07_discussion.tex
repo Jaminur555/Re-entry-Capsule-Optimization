@@ -1,0 +1,109 @@
+%======================================================================
+% 7. DISCUSSION AND LIMITATIONS
+%======================================================================
+\section{Discussion and limitations}
+\label{sec:discussion}
+
+\subsection{What the comparison means for design practice}
+\label{sec:practice}
+
+Three findings carry weight beyond this specific capsule.
+
+First, the size of the robustness dividend depends on where on the front
+one stands. Near the dispersion floor --- the low-heat-load corner ---
+deterministic and robust optimization return essentially the same designs,
+and a matched comparison there shows cuts of a few percent. The 35\%
+design-level median cut --- the robust front's $\sigma$-envelope at
+matched performance --- and the near-universal pair-level preference
+come from the high-performance region, where constraints are pushed and
+dispersion grows quickly; the strict prespecified matching of
+Section~\ref{sec:matched} (median cut 4.3\%) is the complementary
+reminder that the two fronts also interleave, and that the dividend is
+an attainable envelope, not a uniform displacement. A programme
+optimized at a comfortable margin
+point has less to gain from robust reformulation than one operating near
+its limits; the deterministic knee of this study is the cautionary
+example, sitting within 3.7\% of the floor while the front behind it hides
+10\% exceedance probabilities.
+
+Second, the dispersion floor itself is the sharper design insight. At
+$\sigma_{\gamma_0}=0.5^\circ$, no shape in a three-variable capsule space
+reduces heat-load dispersion below about \SI{16}{\mega\joule\per\square\metre}
+(CV $\approx$ 20\%), the slow-family probability cannot be engineered
+below $\approx$0.34, and both fronts bottom out at the same value. The
+levers that would move those numbers are not geometric: entry-corridor
+targeting, guidance, and, on the modelling side, the aerodynamic
+model-form error. When a robust optimization reports an irreducible floor,
+the correct reading is not ``robust optimization failed to help'' but
+``shape is no longer the active constraint on dispersion'' --- a
+conclusion the deterministic formulation cannot produce at all, because it
+never sees the dispersion.
+
+Third, the exploitation episode of Section~\ref{sec:exploit} is a warning
+for the now-common practice of optimizing probabilistic surrogates through
+point predictions. The deterministic optimizer maximized range into a
+region where the surrogate mean exceeded the antipodal distance --- the
+physical maximum of its own objective --- and nothing in the deterministic
+formulation flagged it. Formulations that average over an uncertainty
+space are self-limiting against this failure; formulations that do not
+should at least carry a prediction-variance or trust-region guard.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\begin{itemize}
+  \item \textbf{Range surrogate.} The slow-family range response is
+        irreducible at practical sampling density ($\sim$15\% error), and
+        $\mathrm{E}[sg]$ is biased $+9$ to $+28\%$ by lognormal-mean
+        inflation (measured, disclosed; Monte-Carlo-true values reported
+        for all verified designs). The bias is design-specific (factors
+        1.10--1.39 across the verified designs), so the range leg of the
+        matching window is a surrogate-space construct rather than a
+        cancelled error; it is bounded instead --- the matched statistics
+        are insensitive to widening or removing that leg
+        (Section~\ref{sec:sens}), the heat-load leg is
+        simulator-verified, and the one end-to-end verified pair retains
+        its $\sigma_{Q_s}$ advantage in simulation
+        (Section~\ref{sec:verification}). Absolute range claims
+        rest on simulation, not on the surrogate.
+  \item \textbf{Single nominal mission.} The study operates at one entry
+        state ($V_0=7.83$~km/s, $\gamma_0=-2^\circ$ nominal): the
+        uncertainty model disperses around that point, but other entry
+        classes (low-Earth-orbit return, Mars entry) lie outside the
+        evidence base. The dispersion floor would scale with the assumed
+        dispersions (Section~\ref{sec:sens}); its geometry-independence,
+        by contrast, is a structural finding we expect to carry over.
+  \item \textbf{Trajectory model.} Three degrees of freedom, planar-point
+        mass with the fixed no-skip bank law, no six-degree-of-freedom
+        coupling of attitude and entry loads; the guidance realization is
+        bracketed by the alternate-law verification of
+        Section~\ref{sec:guidance}. Load factors are the
+        drag-based metric with the 4--5\% total-force correction noted in
+        Section~\ref{sec:traj}.
+  \item \textbf{Uncertainty model.} No atmospheric-density dispersion;
+        $k_{CD}$ covers model-form drag error only. Entry-state
+        dispersions are Gaussian and independent; the aerodynamic scales
+        were sized from wind-tunnel residuals at two Mach numbers. The
+        5\% band is an engineering assumption informed by that evidence,
+        not a fitted posterior
+        (Section~\ref{sec:uncertainty}).
+  \item \textbf{Front repeatability.} Both formulations were run with
+        three optimizer seeds: objective statistics coincide, robust
+        cross-seed domination is 3--10\% (tighter than the deterministic
+        formulation's $\le$14\%), and the headline matched statistics
+        reproduce within a few percentage points
+        (Appendix~\ref{app:seeds}). Residual seed sensitivity at the
+        front margins is not fully excluded.
+  \item \textbf{Vehicle model.} Fixed Apollo-density mass model and no
+        thermal-protection or structural coupling; $Q_s$ serves as a
+        proxy for thermal-protection-system mass rather than a sizing
+        calculation.
+\end{itemize}
+
+The natural continuations are a reliability-based formulation with explicit
+probabilistic constraints (for which the verified exceedance statistics
+here provide calibration points), atmospheric-density uncertainty, and a
+six-degree-of-freedom extension of the trajectory layer. The comparison
+machinery --- one validated physics core, a common-random-number moment
+engine, matched-pair statistics, and simulator-level verification --- is
+formulation-agnostic and carries over unchanged.

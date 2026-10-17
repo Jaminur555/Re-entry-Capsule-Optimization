@@ -1,0 +1,156 @@
+%======================================================================
+% 6. VERIFICATION AGAINST THE TRUE SIMULATOR
+%======================================================================
+\section{Verification against the true simulator}
+\label{sec:verification}
+
+Every result so far rests on the surrogate moment engine, so five designs
+were re-examined against the trajectory simulator itself: the deterministic
+and robust knees, the robust matched design of Table~\ref{tab:knees}, the
+most fragile deterministic design (the front's worst shoulder-heating
+exceedance probability --- the audit headline), and the minimum-dispersion
+robust design (the floor claim). Each was propagated with $N=300$
+uncertainty samples drawn from the frozen distributions
+($t_{\max}=\SI{14400}{\s}$), 1{,}500 simulator runs in total, about 23~s
+each. There were no integration failures and 1{,}499 of 1{,}500 runs
+captured.
+
+Table~\ref{tab:verify} summarizes the comparison for the three designs that
+stress the claims. Expected heat load is verified to within $-3.2$ to
+$+1.4\%$ across all five designs, and $\sigma_{Q_s}$ to within a few
+percent (MC slightly lower throughout); in particular the floor survives:
+the minimum-dispersion design measures $\sigma_{Q_s}=
+\SI{15.4}{\mega\joule\per\square\metre}$ in simulation against the claimed
+\SI{16.4}{\mega\joule\per\square\metre} --- the floor is real, and the
+inflated-$\sigma$ construction errs on the conservative side. The
+peak-heating $\mathrm{E}+2\sigma$ constraints are met with 1--3\%
+margin. The audit's headline number is confirmed at its worst point: the
+fragile deterministic design shows $P(q_{\mathrm{shldr}}>\text{limit})=
+29/299=9.7\%$ in simulation against the surrogate's promised 10.0\%, and
+$P(q_{\mathrm{stag}}>\text{limit})=7.4\%$ against 6.8\%. The 299
+denominators are exact bookkeeping rather than a quiet exclusion: the
+fragile design's shallowest draw ($\gamma_0=-0.52^\circ$, three standard
+deviations above nominal, with $k_{CL}=1.07$) lofts into a long skip
+trajectory that is still airborne at the integration horizon
+$t_{\max}=\SI{14400}{\s}$ --- a physical escape of the terminal event
+rather than an integration failure, and non-capturing under both
+guidance laws. Its recorded heat load and shoulder heating at cutoff lie
+far below the limits; counting that run as an exceedance or as a
+non-exceedance brackets the estimate between 29/300 and 30/300
+(9.7--10.0\%), so the verification statement is insensitive to its
+treatment. (Under the alternate law of Section~\ref{sec:guidance} the
+same brackets are 17.0--17.3\% around the reported 17.1\%.) Both knees
+show zero exceedances in 300 runs, which bounds their true exceedance
+probabilities below $\approx$1\% (rule of three). Slow-family
+probabilities agree within about six percentage points.
+
+\begin{table}[htbp]
+\centering
+\caption{Monte-Carlo verification of the surrogate moment engine
+  ($N=300$ true-simulator runs per design). Diff. = (MC $-$ surrogate)
+  in \% of the surrogate value.}
+\label{tab:verify}
+\begin{tabular}{lccc}
+\toprule
+quantity & det knee & robust knee & det fragile \\
+\midrule
+$\mathrm{E}[Q_s]$ diff.        & $+0.1\%$  & $+1.4\%$  & $-3.2\%$ \\
+$\sigma_{Q_s}$ MC / predicted  & 23.9/24.8 & 36.2/37.3 & 65.9/66.7 \\
+$\mathrm{E}[sg]$ diff.         & $-24.6\%$ & $-8.8\%$  & $-20.1\%$ \\
+$P(\mathrm{slow})$ MC / pred.  & 0.40/0.45 & 0.46/0.48 & 0.49/0.49 \\
+$P(q_{\mathrm{stag}})$ MC / pred. & 0/300 / $<0.1\%$ & 0/300 & 7.4\%/6.8\% \\
+$P(q_{\mathrm{shldr}})$ MC / pred. & 0/300 / $<0.1\%$ & 0/300 & \textbf{9.7\%/10.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+One systematic discrepancy survives verification and is disclosed rather
+than tuned away: predicted $\mathrm{E}[sg]$ is high by 8.8--28.1\% on all
+five designs (standard errors 2.7--10.1\%). The bias has a single,
+identifiable cause. The mixture prediction averages a lognormal for each
+family, and the mean of a lognormal amplifies the fitted variance; for the
+slow family, whose fitted log-standard-deviation is large by necessity
+(Section~\ref{sec:gp}), that amplification is severe --- the same mechanism
+that produced the 3.5$\times$ nominal-range extrapolation of
+Section~\ref{sec:exploit}, here in its mild, moment-level form. Monte-Carlo
+truth for the five designs puts $\mathrm{E}[sg]$ at 4.1--5.1~Mm. What
+this bias does to the matched-pair comparison is a fair question, and
+the answer is not that it cancels: the window holds $\mathrm{E}[sg]$
+equal only in surrogate units, so what matters is the
+\emph{differential} bias between matched designs. The measured bias is
+design-specific --- multiplicative factors 1.10--1.39 across the five
+verified designs, with no systematic difference between the fronts
+(deterministic 1.25--1.33, robust 1.10--1.39) --- and at the
+matched knee pair verified end to end (deterministic knee against the
+robust design of Table~\ref{tab:knees}) it moves the range
+ratio from $-2.1\%$ in surrogate units to $-6.6\%$ in simulation, while
+the comparison itself survives: the heat-load leg of the window holds
+with margin ($-6.4\%$), and the $\sigma_{Q_s}$ cut grows from 3.7\% to
+5.1\%.
+
+The differential bias can also be measured directly, at the pairs where
+it had the best chance to distort the comparison. The five most
+adversarial matched pairs were re-verified end to end against the
+simulator: one pair per expected-heat-load quintile, each deterministic
+member chosen with a predicted $\sigma_{Q_s}$ cut at least the
+pair-level median of 27.5\% and the least range slack in its window ---
+precisely where a surrogate error could most plausibly manufacture or
+break a match. Both members of every pair were propagated with the same
+$N=300$ shared uncertainty samples (3{,}000 further simulator runs;
+2{,}999 captured, the single non-capture being one shallow lofted draw
+of the fifth pair's deterministic member, of the kind already described
+above). The comparison survives intact. The predicted $\sigma_{Q_s}$
+cuts of $+30.9$ to $+67.1\%$ measure $+32.0$ to $+68.5\%$ in simulation
+--- per-pair agreement within 1.5 percentage points, and the true cut
+the larger in four of five pairs. The heat-load leg of the window is
+likewise confirmed: member ratios of expected heat load $0.42$--$0.74$
+predicted against $0.40$--$0.74$ measured, the largest deviation
+(pair~4: 0.402 against 0.420) understating the robust advantage. The
+range ratios move from the matched $-2.0\%$ in surrogate units to
+$-5.2$ to $+8.1\%$ measured (standard errors near $\pm 5\%$): the
+differential bias is real but bounded, and at these five pairs it runs
+in the robust front's favour --- the robust members' measured
+$\mathrm{E}[sg]$ inflation is smaller on average (1.23 against 1.26;
+factors 1.14--1.37 deterministic against 1.10--1.33 robust, all inside
+the envelope above) --- so the mean measured range ratio is 1.01:
+matched robust designs give up no range in truth. The matched-pair statistics
+of Section~\ref{sec:matched} therefore rest on direct measurement, not
+only on the bounds below.
+
+Two bounds cover the pairs not verified directly. First, widening or
+removing the range leg of the window leaves the pair statistics intact
+(Section~\ref{sec:sens}: preference 97.2--98.1\%, median cut
+27.5--32.2\%), so no differential bias of plausible magnitude can
+overturn the comparison through the matching. Second, the Monte-Carlo
+standard error on $\mathrm{E}[sg]$ at $N=300$ is itself 3.5--4\%, so a
+2\% range window is beyond the resolution of any verification budget
+this study could afford; the heat-load leg, verified to $-3.2$ to
+$+1.4\%$, is what carries the matching. Absolute range values quoted
+from the surrogate should be read as conservative-high by 9--37\%
+across the fifteen verified designs.
+
+\subsection{Guidance-law sensitivity}
+\label{sec:guidance}
+
+The guidance realization was the dominant residual in the end-to-end
+validation (Appendix~\ref{app:variants}), so the verification was repeated
+under the alternate bank law of Table~\ref{tab:variants} --- Eq.~2.40 as
+printed with the 82$^\circ$ command cap, the variant that reproduces the
+reference track length to $-1.1\%$ --- re-running the same five designs at
+the same 300 uncertainty samples (1{,}500 further simulator runs). The
+shifts are systematic rather than erratic: expected heat load moves $-1$
+to $-7\%$, expected range $-5$ to $-13\%$, and heat-load dispersion
+\emph{increases} by 7--24\% under the more aggressive modulation. Two
+results matter. The verified knees remain safe under both laws (zero
+exceedances in 300 runs at the deterministic knee and the matched design;
+2/300 shoulder exceedances at the robust knee). And the hidden fragility
+of the deterministic front survives and amplifies: at the fragile design,
+shoulder-heating exceedances rise from 29/299 (9.7\%) to 51/299 (17.1\%)
+and stagnation-heating exceedances from 22/299 to 42/299. The concealed
+risk is thus not an artefact of one guidance realization --- if anything,
+the alternate law is harsher on the point-feasible design. Absolute
+dispersion levels, including the floor's magnitude (15.4 to
+\SI{19.1}{\mega\joule\per\square\metre} at the floor design), are
+guidance-dependent exactly as the claims accounting of
+Section~\ref{sec:validation} anticipated; the comparison conclusions, and
+the floor's geometry-independence, are not.

@@ -1,0 +1,53 @@
+%======================================================================
+% APPENDIX B. OPTIMIZER-SEED REPEATABILITIY (3+3 runs; uq/seed_check.py)
+%======================================================================
+\section{Optimizer-seed repeatability}
+\label{app:seeds}
+
+Both formulations were solved with three optimizer seeds each (identical
+settings, population 200 for the deterministic and 150 for the robust
+problem). Table~\ref{tab:seeds} collects the comparison. Objective
+statistics coincide across seeds in both formulations; every population is
+fully feasible in its own formulation; the merged non-dominated sets draw
+balanced contributions from all seeds; and pairwise cross-domination stays
+far below the level at which front membership would be seed-dominated.
+The dispersion floor and the headline matched statistics of
+Section~\ref{sec:matched} reproduce on every robust seed. The
+nearest-match rule is, as expected, the most seed-sensitive of the
+reported statistics (designs improved 68.9--84.2\%, median cut
+1.9--4.3\%): it samples a single partner per deterministic design, so
+front-composition changes move it most; its conclusion --- a majority of
+deterministic designs improved even under the strictest prespecified
+matching --- holds on every seed.
+
+\begin{table}[htbp]
+\centering
+\caption{Optimizer-seed repeatability (three seeds per formulation;
+  deterministic objectives at $\mathbf{z}_0$, robust objectives at the
+  common-random-number lens, $n_z=2000$).}
+\label{tab:seeds}
+\begin{tabular}{lcc}
+\toprule
+statistic & deterministic & robust \\
+\midrule
+population $\times$ seeds            & $200\times3$ & $150\times3$ \\
+feasible fraction (each seed)        & 100\%       & 100\% \\
+$\eta_V$ median                      & 0.805--0.811 & 0.841--0.852 \\
+heat load median [MJ/m$^2$]
+  & $Q_s$ 141.5--143.4 & $\mathrm{E}[Q_s]$ 145.2--149.2 \\
+track median [km]
+  & $sg$ 15{,}390--15{,}710 & $\mathrm{E}[sg]$ 5{,}212--5{,}405 \\
+$\sigma_{Q_s}$ floor [MJ/m$^2$]     & --- & 16.36--16.4 \\
+merged non-dominated (of total)      & 508 / 600  & 401 / 450 \\
+per-seed contributions               & 166/167/175 & 135/127/139 \\
+max.\ pairwise cross-domination      & 14\%        & 10\% \\
+\midrule
+matched pairs                        & --- & 4{,}936--5{,}433 \\
+pairs favouring robust               & --- & 97.4--98.1\% \\
+pair-level median cut                & --- & 25.8--27.5\% \\
+design-level median cut              & --- & 31.9--35.0\% \\
+nearest-match: designs improved      & --- & 68.9--84.2\% \\
+nearest-match median cut             & --- & 1.9--4.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}

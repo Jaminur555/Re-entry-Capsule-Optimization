@@ -1,0 +1,301 @@
+GUIDANCE-MC: bank law patched to Eq-2.40-as-printed (sin-gamma, cap 82 deg); staging to verify_mc_g40.csv
+VERIFY-MC: 5 designs x 300 samples, 1500 to run (~15-50 s each; 5x300 ~ 10-12 h), t_max=14400 s, z-seed 2026
+  design 0 det_knee: knee_designs.csv mode=det (front row 124)
+  design 1 rob_knee: knee_designs.csv mode=robust (front row 51)
+  design 2 rob_matched: knee_designs.csv mode=robust_m (front row 143)
+  design 3 det_fragile: det front row 2, max audit Pexc(q_shldr) = 0.100
+  design 4 rob_floor: robust front row 3, min sd_Qs_infl = 16.4 MJ/m2
+  10/1500 done  3 min elapsed, ETA 8.4 h
+  20/1500 done  7 min elapsed, ETA 8.4 h
+  30/1500 done  11 min elapsed, ETA 8.6 h
+  40/1500 done  14 min elapsed, ETA 8.2 h
+  50/1500 done  16 min elapsed, ETA 7.9 h
+  60/1500 done  21 min elapsed, ETA 8.4 h
+  70/1500 done  25 min elapsed, ETA 8.6 h
+  80/1500 done  29 min elapsed, ETA 8.6 h
+  90/1500 done  32 min elapsed, ETA 8.4 h
+  100/1500 done  35 min elapsed, ETA 8.1 h
+  110/1500 done  39 min elapsed, ETA 8.2 h
+  120/1500 done  43 min elapsed, ETA 8.2 h
+  130/1500 done  46 min elapsed, ETA 8.1 h
+  140/1500 done  51 min elapsed, ETA 8.2 h
+  150/1500 done  54 min elapsed, ETA 8.1 h
+  160/1500 done  57 min elapsed, ETA 8.0 h
+  170/1500 done  63 min elapsed, ETA 8.2 h
+  180/1500 done  66 min elapsed, ETA 8.1 h
+  190/1500 done  70 min elapsed, ETA 8.0 h
+  200/1500 done  74 min elapsed, ETA 8.0 h
+  210/1500 done  77 min elapsed, ETA 7.9 h
+  220/1500 done  81 min elapsed, ETA 7.9 h
+  230/1500 done  86 min elapsed, ETA 7.9 h
+  240/1500 done  89 min elapsed, ETA 7.8 h
+  250/1500 done  93 min elapsed, ETA 7.7 h
+  260/1500 done  98 min elapsed, ETA 7.8 h
+  270/1500 done  101 min elapsed, ETA 7.7 h
+  280/1500 done  104 min elapsed, ETA 7.5 h
+  290/1500 done  107 min elapsed, ETA 7.4 h
+  300/1500 done  110 min elapsed, ETA 7.3 h
+  310/1500 done  114 min elapsed, ETA 7.3 h
+  320/1500 done  118 min elapsed, ETA 7.3 h
+  330/1500 done  123 min elapsed, ETA 7.2 h
+  340/1500 done  126 min elapsed, ETA 7.2 h
+  350/1500 done  129 min elapsed, ETA 7.1 h
+  360/1500 done  134 min elapsed, ETA 7.1 h
+  370/1500 done  138 min elapsed, ETA 7.0 h
+  380/1500 done  143 min elapsed, ETA 7.0 h
+  390/1500 done  147 min elapsed, ETA 7.0 h
+  400/1500 done  150 min elapsed, ETA 6.9 h
+  410/1500 done  155 min elapsed, ETA 6.9 h
+  420/1500 done  160 min elapsed, ETA 6.8 h
+  430/1500 done  165 min elapsed, ETA 6.8 h
+  440/1500 done  176 min elapsed, ETA 7.1 h
+  450/1500 done  180 min elapsed, ETA 7.0 h
+  460/1500 done  184 min elapsed, ETA 6.9 h
+  470/1500 done  189 min elapsed, ETA 6.9 h
+  480/1500 done  193 min elapsed, ETA 6.8 h
+  490/1500 done  197 min elapsed, ETA 6.8 h
+  500/1500 done  201 min elapsed, ETA 6.7 h
+  510/1500 done  205 min elapsed, ETA 6.6 h
+  520/1500 done  209 min elapsed, ETA 6.6 h
+  530/1500 done  215 min elapsed, ETA 6.5 h
+  540/1500 done  217 min elapsed, ETA 6.4 h
+  550/1500 done  223 min elapsed, ETA 6.4 h
+  560/1500 done  228 min elapsed, ETA 6.4 h
+  570/1500 done  231 min elapsed, ETA 6.3 h
+  580/1500 done  234 min elapsed, ETA 6.2 h
+  590/1500 done  237 min elapsed, ETA 6.1 h
+  600/1500 done  241 min elapsed, ETA 6.0 h
+  610/1500 done  244 min elapsed, ETA 5.9 h
+  620/1500 done  247 min elapsed, ETA 5.8 h
+  630/1500 done  251 min elapsed, ETA 5.8 h
+  640/1500 done  254 min elapsed, ETA 5.7 h
+  650/1500 done  257 min elapsed, ETA 5.6 h
+  660/1500 done  261 min elapsed, ETA 5.5 h
+  670/1500 done  264 min elapsed, ETA 5.5 h
+  680/1500 done  268 min elapsed, ETA 5.4 h
+  690/1500 done  271 min elapsed, ETA 5.3 h
+  700/1500 done  274 min elapsed, ETA 5.2 h
+  710/1500 done  279 min elapsed, ETA 5.2 h
+  720/1500 done  283 min elapsed, ETA 5.1 h
+  730/1500 done  287 min elapsed, ETA 5.0 h
+  740/1500 done  291 min elapsed, ETA 5.0 h
+  750/1500 done  294 min elapsed, ETA 4.9 h
+  760/1500 done  298 min elapsed, ETA 4.8 h
+  770/1500 done  302 min elapsed, ETA 4.8 h
+  780/1500 done  305 min elapsed, ETA 4.7 h
+  790/1500 done  309 min elapsed, ETA 4.6 h
+  800/1500 done  313 min elapsed, ETA 4.6 h
+  810/1500 done  315 min elapsed, ETA 4.5 h
+  820/1500 done  319 min elapsed, ETA 4.4 h
+  830/1500 done  324 min elapsed, ETA 4.4 h
+  840/1500 done  326 min elapsed, ETA 4.3 h
+  850/1500 done  330 min elapsed, ETA 4.2 h
+  860/1500 done  335 min elapsed, ETA 4.2 h
+  870/1500 done  338 min elapsed, ETA 4.1 h
+  880/1500 done  341 min elapsed, ETA 4.0 h
+  890/1500 done  343 min elapsed, ETA 3.9 h
+  900/1500 done  347 min elapsed, ETA 3.9 h
+  910/1500 done  350 min elapsed, ETA 3.8 h
+  920/1500 done  355 min elapsed, ETA 3.7 h
+  930/1500 done  359 min elapsed, ETA 3.7 h
+  940/1500 done  363 min elapsed, ETA 3.6 h
+  950/1500 done  365 min elapsed, ETA 3.5 h
+  960/1500 done  370 min elapsed, ETA 3.5 h
+  970/1500 done  376 min elapsed, ETA 3.4 h
+  980/1500 done  380 min elapsed, ETA 3.4 h
+  990/1500 done  382 min elapsed, ETA 3.3 h
+  1000/1500 done  386 min elapsed, ETA 3.2 h
+  1010/1500 done  391 min elapsed, ETA 3.2 h
+  1020/1500 done  396 min elapsed, ETA 3.1 h
+  1030/1500 done  399 min elapsed, ETA 3.0 h
+  1040/1500 done  405 min elapsed, ETA 3.0 h
+  1050/1500 done  409 min elapsed, ETA 2.9 h
+  1060/1500 done  412 min elapsed, ETA 2.9 h
+  1070/1500 done  418 min elapsed, ETA 2.8 h
+  1080/1500 done  421 min elapsed, ETA 2.7 h
+  1090/1500 done  426 min elapsed, ETA 2.7 h
+  1100/1500 done  431 min elapsed, ETA 2.6 h
+  1110/1500 done  435 min elapsed, ETA 2.5 h
+  1120/1500 done  441 min elapsed, ETA 2.5 h
+  1130/1500 done  446 min elapsed, ETA 2.4 h
+  1140/1500 done  450 min elapsed, ETA 2.4 h
+  1150/1500 done  456 min elapsed, ETA 2.3 h
+  1160/1500 done  463 min elapsed, ETA 2.3 h
+  1170/1500 done  466 min elapsed, ETA 2.2 h
+  1180/1500 done  469 min elapsed, ETA 2.1 h
+  1190/1500 done  472 min elapsed, ETA 2.1 h
+  1200/1500 done  476 min elapsed, ETA 2.0 h
+  1210/1500 done  480 min elapsed, ETA 1.9 h
+  1220/1500 done  483 min elapsed, ETA 1.8 h
+  1230/1500 done  486 min elapsed, ETA 1.8 h
+  1240/1500 done  489 min elapsed, ETA 1.7 h
+  1250/1500 done  492 min elapsed, ETA 1.6 h
+  1260/1500 done  496 min elapsed, ETA 1.6 h
+  1270/1500 done  499 min elapsed, ETA 1.5 h
+  1280/1500 done  503 min elapsed, ETA 1.4 h
+  1290/1500 done  507 min elapsed, ETA 1.4 h
+  1300/1500 done  509 min elapsed, ETA 1.3 h
+  1310/1500 done  514 min elapsed, ETA 1.2 h
+  1320/1500 done  517 min elapsed, ETA 1.2 h
+  1330/1500 done  521 min elapsed, ETA 1.1 h
+  1340/1500 done  525 min elapsed, ETA 1.0 h
+  1350/1500 done  528 min elapsed, ETA 1.0 h
+  1360/1500 done  531 min elapsed, ETA 0.9 h
+  1370/1500 done  535 min elapsed, ETA 0.8 h
+  1380/1500 done  537 min elapsed, ETA 0.8 h
+  1390/1500 done  541 min elapsed, ETA 0.7 h
+  1400/1500 done  545 min elapsed, ETA 0.6 h
+  1410/1500 done  547 min elapsed, ETA 0.6 h
+  1420/1500 done  551 min elapsed, ETA 0.5 h
+  1430/1500 done  555 min elapsed, ETA 0.5 h
+  1440/1500 done  557 min elapsed, ETA 0.4 h
+  1450/1500 done  562 min elapsed, ETA 0.3 h
+  1460/1500 done  568 min elapsed, ETA 0.3 h
+  1470/1500 done  571 min elapsed, ETA 0.2 h
+  1480/1500 done  574 min elapsed, ETA 0.1 h
+  1490/1500 done  578 min elapsed, ETA 0.1 h
+  1500/1500 done  581 min elapsed, ETA 0.0 h
+C:\Users\xamii\anaconda3\Lib\site-packages\joblib\externals\loky\backend\context.py:136: UserWarning: Could not find the number of physical cores for the following reason:
+[WinError 2] The system cannot find the file specified
+Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+  warnings.warn(
+  File "C:\Users\xamii\anaconda3\Lib\site-packages\joblib\externals\loky\backend\context.py", line 257, in _count_physical_cores
+    cpu_info = subprocess.run(
+        "wmic CPU Get NumberOfCores /Format:csv".split(),
+        capture_output=True,
+        text=True,
+    )
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xamii\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+
+-- det_knee  [knee_designs.csv mode=det (front row 124)]
+   N=300  captured 300  (P_cap sur 0.999)  slow 111 = 37.0%  (P_slow sur 0.450)
+   E[Qs]             110.7 ±   1.6 SE   surrogate     117.4 MJ/m2   diff   -5.7% (-4.1 SE)
+   sd[Qs]             28.3            surrogate plain    24.3  infl    24.8  MJ/m2
+   E[sg]            3878.6 ± 164.3 SE   surrogate    5886.8 km      diff  -34.1% (-12.2 SE)
+   q_stag_max    mean  289.8  MC max  537.6  MC mean+2sd  433.7  (lim 700; sur E+2s  358.6)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   q_shldr_max   mean  462.1  MC max  857.8  MC mean+2sd  691.6  (lim 1000; sur E+2s  573.2)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   n_max         mean    2.4  MC max    6.5  MC mean+2sd    3.7  (lim 5; sur E+2s    2.8)
+                 exceed 4/300 = 1.3% (0 -> P<= 1.0%)   sur Pexc 0.001
+
+-- rob_knee  [knee_designs.csv mode=robust (front row 51)]
+   N=300  captured 300  (P_cap sur 0.998)  slow 124 = 41.3%  (P_slow sur 0.480)
+   E[Qs]             160.1 ±   2.5 SE   surrogate     164.1 MJ/m2   diff   -2.5% (-1.6 SE)
+   sd[Qs]             42.8            surrogate plain    36.6  infl    37.3  MJ/m2
+   E[sg]            4625.2 ± 176.0 SE   surrogate    5585.6 km      diff  -17.2% (-5.5 SE)
+   q_stag_max    mean  348.0  MC max  696.4  MC mean+2sd  535.4  (lim 700; sur E+2s  447.5)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.001
+   q_shldr_max   mean  551.3  MC max 1103.9  MC mean+2sd  848.1  (lim 1000; sur E+2s  724.4)
+                 exceed 2/300 = 0.7% (0 -> P<= 1.0%)   sur Pexc 0.003
+   n_max         mean    2.4  MC max    6.5  MC mean+2sd    3.5  (lim 5; sur E+2s    2.7)
+                 exceed 3/300 = 1.0% (0 -> P<= 1.0%)   sur Pexc 0.001
+
+-- rob_matched  [knee_designs.csv mode=robust_m (front row 143)]
+   N=300  captured 300  (P_cap sur 0.999)  slow 105 = 35.0%  (P_slow sur 0.433)
+   E[Qs]             104.5 ±   1.5 SE   surrogate     110.6 MJ/m2   diff   -5.5% (-4.0 SE)
+   sd[Qs]             26.2            surrogate plain    23.4  infl    23.9  MJ/m2
+   E[sg]            3734.6 ± 151.4 SE   surrogate    5765.9 km      diff  -35.2% (-13.4 SE)
+   q_stag_max    mean  290.5  MC max  525.6  MC mean+2sd  428.7  (lim 700; sur E+2s  362.1)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   q_shldr_max   mean  453.7  MC max  821.3  MC mean+2sd  669.6  (lim 1000; sur E+2s  567.7)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   n_max         mean    2.6  MC max    6.5  MC mean+2sd    3.8  (lim 5; sur E+2s    3.0)
+                 exceed 5/300 = 1.7% (0 -> P<= 1.0%)   sur Pexc 0.001
+
+-- det_fragile  [det front row 2, max audit Pexc(q_shldr) = 0.100]
+   N=300  captured 299  (P_cap sur 0.992)  slow 142 = 47.5%  (P_slow sur 0.490)
+   E[Qs]             265.2 ±   4.1 SE   surrogate     277.2 MJ/m2   diff   -4.3% (-2.9 SE)
+   sd[Qs]             70.5            surrogate plain    65.5  infl    66.7  MJ/m2
+   E[sg]            4643.0 ± 151.0 SE   surrogate    6113.5 km      diff  -24.1% (-9.7 SE)
+   q_stag_max    mean  560.1  MC max 1105.6  MC mean+2sd  809.2  (lim 700; sur E+2s  702.1)
+                 exceed 42/299 = 14.0% (0 -> P<= 1.0%)   sur Pexc 0.068
+   q_shldr_max   mean  829.6  MC max 1637.5  MC mean+2sd 1197.7  (lim 1000; sur E+2s 1068.9)
+                 exceed 51/299 = 17.1% (0 -> P<= 1.0%)   sur Pexc 0.100
+   n_max         mean    3.0  MC max    6.7  MC mean+2sd    3.8  (lim 5; sur E+2s    3.3)
+                 exceed 3/299 = 1.0% (0 -> P<= 1.0%)   sur Pexc 0.002
+
+-- rob_floor  [robust front row 3, min sd_Qs_infl = 16.4 MJ/m2]
+   N=300  captured 300  (P_cap sur 1.000)  slow 94 = 31.3%  (P_slow sur 0.391)
+   E[Qs]              74.5 ±   1.1 SE   surrogate      82.3 MJ/m2   diff   -9.4% (-7.0 SE)
+   sd[Qs]             19.1            surrogate plain    15.8  infl    16.4  MJ/m2
+   E[sg]            4020.3 ± 164.9 SE   surrogate    5099.0 km      diff  -21.2% (-6.5 SE)
+   q_stag_max    mean  239.4  MC max  404.9  MC mean+2sd  360.3  (lim 700; sur E+2s  304.4)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   q_shldr_max   mean  383.3  MC max  648.6  MC mean+2sd  576.9  (lim 1000; sur E+2s  490.6)
+                 exceed 0/300 = 0.0% (0 -> P<= 1.0%)   sur Pexc 0.000
+   n_max         mean    2.7  MC max    6.8  MC mean+2sd    4.4  (lim 5; sur E+2s    2.9)
+                 exceed 8/300 = 2.7% (0 -> P<= 1.0%)   sur Pexc 0.000
+
+saved F:\My documents\Thesis Extension\capsule_opt\uq\data/verify_mc_g40_summary.csv.surrogate_ref.csv
+
+================ GUIDANCE COMPARISON (MC base law vs MC Eq-2.40 law) ================
+
+-- det_knee
+   E_Qs       base     117.42   alt     110.71      -5.7%
+   sd_Qs      base      23.90   alt      28.27     +18.3%
+   E_sg       base    4437.96   alt    3878.60     -12.6%
+   P_slow     base       0.40   alt       0.37      -7.5%
+   exc_q_stag base    0/300   alt    0/300
+   exc_q_shldr base    0/300   alt    0/300
+   exc_n      base    0/300   alt    4/300
+
+-- rob_knee
+   E_Qs       base     166.43   alt     160.10      -3.8%
+   sd_Qs      base      36.21   alt      42.80     +18.2%
+   E_sg       base    5093.72   alt    4625.22      -9.2%
+   P_slow     base       0.46   alt       0.41     -10.8%
+   exc_q_stag base    0/300   alt    0/300
+   exc_q_shldr base    0/300   alt    2/300
+   exc_n      base    0/300   alt    3/300
+
+-- rob_matched
+   E_Qs       base     109.88   alt     104.48      -4.9%
+   sd_Qs      base      22.67   alt      26.20     +15.6%
+   E_sg       base    4144.05   alt    3734.58      -9.9%
+   P_slow     base       0.37   alt       0.35      -6.3%
+   exc_q_stag base    0/300   alt    0/300
+   exc_q_shldr base    0/300   alt    0/300
+   exc_n      base    0/300   alt    5/300
+
+-- det_fragile
+   E_Qs       base     268.32   alt     265.24      -1.1%
+   sd_Qs      base      65.91   alt      70.47      +6.9%
+   E_sg       base    4886.71   alt    4642.99      -5.0%
+   P_slow     base       0.49   alt       0.47      -2.7%
+   exc_q_stag base   22/299   alt   42/299
+   exc_q_shldr base   29/299   alt   51/299
+   exc_n      base    1/299   alt    3/299
+
+-- rob_floor
+   E_Qs       base      79.98   alt      74.55      -6.8%
+   sd_Qs      base      15.43   alt      19.10     +23.8%
+   E_sg       base    4456.02   alt    4020.27      -9.8%
+   P_slow     base       0.35   alt       0.31      -9.6%
+   exc_q_stag base    0/300   alt    0/300
+   exc_q_shldr base    0/300   alt    0/300
+   exc_n      base    0/300   alt    8/300
+
+saved F:\My documents\Thesis Extension\capsule_opt\uq\data/verify_mc_g40_summary.csv

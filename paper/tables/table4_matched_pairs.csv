@@ -1,0 +1,14 @@
+statistic,value,unit
+det designs with >= 1 matched robust design,196 / 200,-
+"matched (det, robust) pairs",5371,-
+PAIR-level: fraction of pairs with sigma_robust < sigma_det,0.9808229380003723,-
+PAIR-level: median sigma cut over all pairs,0.2751593941373336,-
+DESIGN-level: fraction of det designs beaten by best match,0.9948979591836735,-
+DESIGN-level: median best-match sigma cut (sigma-envelope; fig2 ECDF median),0.34976716085475557,-
+DESIGN-level: fraction beaten by nearest match (prespecified),0.8418367346938775,-
+DESIGN-level: median nearest-match sigma cut (fig2 ECDF median),0.04338590902480438,-
+median sigma spread of eligible partners (max/min),1.4894469700850708,-
+worst-member P(q_stag) -- det front,0.0679550083817422,-
+worst-member P(q_stag) -- robust front,0.0477371190118412,-
+worst-member P(q_shldr) -- det front,0.0996991403508057,-
+worst-member P(q_shldr) -- robust front,0.0655486353348482,-

@@ -1,5 +1,14 @@
-﻿__pycache__/
+__pycache__/
 *.pyc
 *.pyo
 .ipynb_checkpoints/
 uq/artifacts/
+
+# LaTeX build artifacts (regenerable via pdflatex+bibtex)
+paper/manuscript/main.aux
+paper/manuscript/main.bbl
+paper/manuscript/main.blg
+paper/manuscript/main.log
+paper/manuscript/main.out
+paper/manuscript/main.spl
+paper/manuscript/main.pdf
