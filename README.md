@@ -67,7 +67,7 @@ uq/                 Phase 2 — DOE, surrogate build + accuracy gate
 paper/              journal manuscript + paper-facing assets
   manuscript/         Acta Astronautica LaTeX (elsarticle, sections/01–08)
   figures/ tables/     publication figures + data tables (copies; uq/ is source)
-  supplementary/      figS1 convergence evidence + interactive front
+  supplementary/      figS1 convergence evidence
   thesis_assets/      figures extracted from the thesis docx (to restyle)
 main.py             deterministic NSGA-II optimization entry point
 data/cache/         Taylor–Maccoll cone-Cp lookup table

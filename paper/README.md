@@ -43,7 +43,6 @@ files here — regenerate them (map below) so provenance stays one-directional:
 
 ## supplementary/
 
-- fig1_interactive_front.html — interactive companion of fig1
 - figS1_nsga2_convergence.{png,pdf} — NSGA-II convergence evidence
 
 ## manuscript/   (LaTeX, Acta Astronautica / elsarticle)
